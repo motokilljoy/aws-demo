@@ -16,7 +16,7 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "perforce/trusty64-min"
+  config.vm.box = "centos71-min"
   config.vm.provider "virtualbox" do |v|
     v.memory = 1024
     v.cpus = 2
@@ -25,21 +25,25 @@ Vagrant.configure(2) do |config|
   config.vm.define :saltmaster do |salt|
     salt.vm.network :private_network, ip: "192.168.44.101"
     salt.vm.hostname = 'salt-master'
-    salt.vm.provision "shell", inline: "sh /vagrant/setup/init.sh master"
+    salt.vm.provision "shell", inline: "systemctl disable firewalld && systemctl stop firewalld"
+    salt.vm.provision "shell", inline: "sh /vagrant/setup/init.sh 192.168.44.101 master"
+    salt.vm.synced_folder "salt", "/srv/salt"
   end
 
   # test minion 
   config.vm.define :p4dhost do |salt|
     salt.vm.network :private_network, ip: "192.168.44.201"
     salt.vm.hostname = "p4d-host"
-    salt.vm.provision "shell", inline: "sh /vagrant/setup/init.sh"
+    salt.vm.provision "shell", inline: "systemctl disable firewalld && systemctl stop firewalld"
+    salt.vm.provision "shell", inline: "sh /vagrant/setup/init.sh 192.168.44.101 p4d-host"
   end
 
   # test minion 
   config.vm.define :apphost do |salt|
     salt.vm.network :private_network, ip: "192.168.44.51"
     salt.vm.hostname = "app-host"
-    salt.vm.provision "shell", inline: "sh /vagrant/setup/init.sh"
+    salt.vm.provision "shell", inline: "systemctl disable firewalld && systemctl stop firewalld"
+    salt.vm.provision "shell", inline: "sh /vagrant/setup/init.sh 192.168.44.101 app-host"
   end
 
 end

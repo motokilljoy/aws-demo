@@ -3,3 +3,6 @@ docker:
     name:       docker-engine
     version:    ''
     refresh:    True
+  service:
+    name:       docker
+    enable:     True

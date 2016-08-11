@@ -1,0 +1,17 @@
+haproxy:
+  package:
+    name:     haproxy
+    refresh:  True
+    version:  1.5.14
+    source:   vbernat/haproxy-1.5
+  service:
+    name:     haproxy
+    enable:   True
+  config_file:
+    path:     /etc/haproxy/haproxy.cfg
+    user:     root
+    group:    root
+    mode:     644
+    manage:   True
+    source:   salt://haproxy/files/haproxy.cfg.jinja
+  config:

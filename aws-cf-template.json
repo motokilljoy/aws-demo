@@ -4,14 +4,14 @@
     "AWS::CloudFormation::Designer": {
       "de5f09d3-bd08-47ff-a666-9df0f48fb27d": {
         "size": {
-          "width": 510,
-          "height": 280
+          "width": 1110,
+          "height": 720
         },
         "position": {
           "x": 30,
-          "y": 130
+          "y": 120
         },
-        "z": 0,
+        "z": 1,
         "embeds": [
           "3cddc86c-cf7a-4d8b-b18c-19caee3dd39c",
           "bbfa4c46-3b78-4794-aef1-26666bb77863",
@@ -21,14 +21,14 @@
       },
       "7c798387-f8e7-4bf7-9588-93d035bc1344": {
         "size": {
-          "width": 320,
-          "height": 130
+          "width": 540,
+          "height": 300
         },
         "position": {
           "x": 60,
-          "y": 250
+          "y": 240
         },
-        "z": 1,
+        "z": 2,
         "parent": "de5f09d3-bd08-47ff-a666-9df0f48fb27d",
         "embeds": [
           "d7fbeb02-b237-4fec-b356-3296c696abd6",
@@ -42,10 +42,10 @@
           "height": 60
         },
         "position": {
-          "x": 210,
-          "y": 280
+          "x": 180,
+          "y": 330
         },
-        "z": 2,
+        "z": 3,
         "parent": "7c798387-f8e7-4bf7-9588-93d035bc1344",
         "embeds": [],
         "dependson": [
@@ -53,7 +53,9 @@
         ],
         "isrelatedto": [
           "55575608-3326-439f-910e-775bce52cd01",
-          "3cddc86c-cf7a-4d8b-b18c-19caee3dd39c"
+          "3cddc86c-cf7a-4d8b-b18c-19caee3dd39c",
+          "4479f2c4-0d1b-4a9e-82c7-ddb40c48d995",
+          "ebfb6947-7ff1-49dc-a2ba-ddaaabee478d"
         ]
       },
       "55575608-3326-439f-910e-775bce52cd01": {
@@ -63,9 +65,9 @@
         },
         "position": {
           "x": 210,
-          "y": 160
+          "y": 150
         },
-        "z": 1,
+        "z": 2,
         "parent": "de5f09d3-bd08-47ff-a666-9df0f48fb27d",
         "embeds": []
       },
@@ -78,7 +80,7 @@
           "x": 570,
           "y": 300
         },
-        "z": 0,
+        "z": 1,
         "embeds": []
       },
       "1b801c2d-1cf5-4b8f-bdc0-93d786e252a0": {
@@ -92,14 +94,14 @@
       },
       "bbfa4c46-3b78-4794-aef1-26666bb77863": {
         "size": {
-          "width": 120,
-          "height": 130
+          "width": 210,
+          "height": 270
         },
         "position": {
           "x": 390,
-          "y": 250
+          "y": 240
         },
-        "z": 1,
+        "z": 2,
         "parent": "de5f09d3-bd08-47ff-a666-9df0f48fb27d",
         "embeds": [
           "9d4044f4-9436-4ad0-98df-4c5976a5ad1f"
@@ -111,10 +113,10 @@
           "height": 60
         },
         "position": {
-          "x": 420,
+          "x": 390,
           "y": 300
         },
-        "z": 2,
+        "z": 3,
         "parent": "bbfa4c46-3b78-4794-aef1-26666bb77863",
         "embeds": [],
         "references": [
@@ -232,10 +234,10 @@
           "height": 60
         },
         "position": {
-          "x": 300,
-          "y": 280
+          "x": 270,
+          "y": 330
         },
-        "z": 2,
+        "z": 3,
         "parent": "7c798387-f8e7-4bf7-9588-93d035bc1344",
         "embeds": [],
         "dependson": [
@@ -244,7 +246,10 @@
         ],
         "isrelatedto": [
           "55575608-3326-439f-910e-775bce52cd01",
-          "75226638-90eb-49dd-8706-31520eb1239f"
+          "75226638-90eb-49dd-8706-31520eb1239f",
+          "3cddc86c-cf7a-4d8b-b18c-19caee3dd39c",
+          "4479f2c4-0d1b-4a9e-82c7-ddb40c48d995",
+          "ebfb6947-7ff1-49dc-a2ba-ddaaabee478d"
         ]
       },
       "75226638-90eb-49dd-8706-31520eb1239f": {
@@ -275,14 +280,19 @@
           "height": 60
         },
         "position": {
-          "x": 110,
-          "y": 280
+          "x": 90,
+          "y": 330
         },
-        "z": 2,
+        "z": 3,
         "parent": "7c798387-f8e7-4bf7-9588-93d035bc1344",
         "embeds": [],
         "dependson": [
           "d7fbeb02-b237-4fec-b356-3296c696abd6"
+        ],
+        "isrelatedto": [
+          "3cddc86c-cf7a-4d8b-b18c-19caee3dd39c",
+          "4479f2c4-0d1b-4a9e-82c7-ddb40c48d995",
+          "ebfb6947-7ff1-49dc-a2ba-ddaaabee478d"
         ]
       },
       "3cddc86c-cf7a-4d8b-b18c-19caee3dd39c": {
@@ -291,12 +301,101 @@
           "height": 60
         },
         "position": {
-          "x": 110,
-          "y": 165
+          "x": 120,
+          "y": 180
         },
-        "z": 1,
+        "z": 2,
         "parent": "de5f09d3-bd08-47ff-a666-9df0f48fb27d",
         "embeds": []
+      },
+      "4479f2c4-0d1b-4a9e-82c7-ddb40c48d995": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 60,
+          "y": 870
+        },
+        "z": 1,
+        "embeds": []
+      },
+      "c44de952-cf40-47fb-bb08-40ba2abc8a81": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 180,
+          "y": 870
+        },
+        "z": 1,
+        "embeds": []
+      },
+      "ebfb6947-7ff1-49dc-a2ba-ddaaabee478d": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 300,
+          "y": 870
+        },
+        "z": 1,
+        "embeds": [],
+        "isrelatedto": [
+          "c44de952-cf40-47fb-bb08-40ba2abc8a81"
+        ]
+      },
+      "54482ef1-c453-4a92-9cee-b523b71a9247": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 420,
+          "y": 870
+        },
+        "z": 1,
+        "embeds": [],
+        "isrelatedto": [
+          "d7fbeb02-b237-4fec-b356-3296c696abd6"
+        ]
+      },
+      "e2299c0b-ceed-4fa3-9949-131e74bd5c3b": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 540,
+          "y": 870
+        },
+        "z": 1,
+        "embeds": [],
+        "references": [
+          "4479f2c4-0d1b-4a9e-82c7-ddb40c48d995"
+        ],
+        "dependson": [
+          "e99f9396-0b69-4f3f-ac8f-b676d2743c7c",
+          "d7fbeb02-b237-4fec-b356-3296c696abd6",
+          "7dec3d16-20db-4fb1-aa62-e3929c55c423"
+        ]
+      },
+      "63b602db-2dd2-4911-9220-775ff7fea8f9": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 660,
+          "y": 870
+        },
+        "z": 1,
+        "embeds": [],
+        "isrelatedto": [
+          "e99f9396-0b69-4f3f-ac8f-b676d2743c7c"
+        ]
       }
     }
   },
@@ -304,6 +403,12 @@
     "VPC": {
       "Type": "AWS::EC2::VPC",
       "Properties": {
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Perforce Helix VPC"
+          }
+        ],
         "EnableDnsSupport": "true",
         "EnableDnsHostnames": "true",
         "CidrBlock": "10.0.0.0/16"
@@ -320,7 +425,13 @@
         "VpcId": {
           "Ref": "VPC"
         },
-        "CidrBlock": "10.0.0.0/24"
+        "CidrBlock": "10.0.0.0/24",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Perforce Helix Subnet"
+          }
+        ]
       },
       "Metadata": {
         "AWS::CloudFormation::Designer": {
@@ -331,6 +442,12 @@
     "MainServerSecurityGroup": {
       "Type": "AWS::EC2::SecurityGroup",
       "Properties": {
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Perforce Helix Main Server SecurityGroup"
+          }
+        ],
         "VpcId": {
           "Ref": "VPC"
         },
@@ -372,14 +489,21 @@
     },
     "InternetGateway": {
       "Type": "AWS::EC2::InternetGateway",
-      "Properties": {},
+      "Properties": {
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Perforce Helix InternetGateway"
+          }
+        ]
+      },
       "Metadata": {
         "AWS::CloudFormation::Designer": {
           "id": "0b028277-3ce0-4fb5-903d-19337ab182dc"
         }
       }
     },
-    "EC2VPCG3RO9E": {
+    "VPCGatewayAttachment": {
       "Type": "AWS::EC2::VPCGatewayAttachment",
       "Properties": {
         "InternetGatewayId": {
@@ -398,6 +522,12 @@
     "PublicRouteTable": {
       "Type": "AWS::EC2::RouteTable",
       "Properties": {
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Perforce Helix PublicRouteTable"
+          }
+        ],
         "VpcId": {
           "Ref": "VPC"
         }
@@ -428,7 +558,7 @@
         "InternetGateway"
       ]
     },
-    "EC2SRTA2GMED": {
+    "SubnetRouteTableAssociation": {
       "Type": "AWS::EC2::SubnetRouteTableAssociation",
       "Properties": {
         "RouteTableId": {
@@ -447,6 +577,12 @@
     "MainInstance": {
       "Type": "AWS::EC2::Instance",
       "Properties": {
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Perforce Helix Main Server"
+          }
+        ],
         "InstanceType": {
           "Ref": "InstanceType"
         },
@@ -494,9 +630,22 @@
             "Fn::Join": [
               "",
               [
-                "#!/bin/bash -xe\n",
+                "#!/bin/bash -v\n",
                 "yum update -y aws-cfn-bootstrap\n",
                 "# Install the files and packages from the metadata\n",
+                "\n",
+                "# Helper function\n",
+                "function error_exit\n",
+                "{\n",
+                "  /opt/aws/bin/cfn-signal -e 1 -r \"$1\" '",
+                {
+                  "Ref": "WaitHandle"
+                },
+                "'\n",
+                "  exit 1\n",
+                "}\n",
+                "\n",
+                "# Install local config\n",
                 "/opt/aws/bin/cfn-init -v ",
                 "         --stack ",
                 {
@@ -504,6 +653,17 @@
                 },
                 "         --resource MainInstance ",
                 "         --configsets All ",
+                "         --access-key ",
+                {
+                  "Ref": "HostKeys"
+                },
+                "         --secret-key ",
+                {
+                  "Fn::GetAtt": [
+                    "HostKeys",
+                    "SecretAccessKey"
+                  ]
+                },
                 "         --region ",
                 {
                   "Ref": "AWS::Region"
@@ -520,7 +680,14 @@
                 {
                   "Ref": "AWS::Region"
                 },
-                "\n"
+                "\n",
+                " > /var/tmp/cfn-init.output || error_exit 'Failed to run cfn-init'\n",
+                "# All is well so signal success\n",
+                "/opt/aws/bin/cfn-signal -e 0 -r \"Main Instance Stack setup complete\" '",
+                {
+                  "Ref": "WaitHandle"
+                },
+                "'\n"
               ]
             ]
           }
@@ -562,6 +729,12 @@
     "P4D": {
       "Type": "AWS::EC2::Instance",
       "Properties": {
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Perforce Helix P4D Server"
+          }
+        ],
         "InstanceType": {
           "Ref": "InstanceType"
         },
@@ -606,9 +779,22 @@
             "Fn::Join": [
               "",
               [
-                "#!/bin/bash -xe\n",
+                "#!/bin/bash -v\n",
                 "yum update -y aws-cfn-bootstrap\n",
                 "# Install the files and packages from the metadata\n",
+                "\n",
+                "# Helper function\n",
+                "function error_exit\n",
+                "{\n",
+                "  /opt/aws/bin/cfn-signal -e 1 -r \"$1\" '",
+                {
+                  "Ref": "WaitHandle"
+                },
+                "'\n",
+                "  exit 1\n",
+                "}\n",
+                "\n",
+                "# Install local config\n",
                 "/opt/aws/bin/cfn-init -v ",
                 "         --stack ",
                 {
@@ -616,6 +802,17 @@
                 },
                 "         --resource P4D ",
                 "         --configsets All ",
+                "         --access-key ",
+                {
+                  "Ref": "HostKeys"
+                },
+                "         --secret-key ",
+                {
+                  "Fn::GetAtt": [
+                    "HostKeys",
+                    "SecretAccessKey"
+                  ]
+                },
                 "         --region ",
                 {
                   "Ref": "AWS::Region"
@@ -632,7 +829,14 @@
                 {
                   "Ref": "AWS::Region"
                 },
-                "\n"
+                "\n",
+                " > /var/tmp/cfn-init.output || error_exit 'Failed to run cfn-init'\n",
+                "# All is well so signal success\n",
+                "/opt/aws/bin/cfn-signal -e 0 -r \"P4D Instance setup complete\" '",
+                {
+                  "Ref": "WaitHandle"
+                },
+                "'\n"
               ]
             ]
           }
@@ -670,6 +874,12 @@
     "AppInstance": {
       "Type": "AWS::EC2::Instance",
       "Properties": {
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Perforce Helix App Server"
+          }
+        ],
         "InstanceType": {
           "Ref": "InstanceType"
         },
@@ -714,9 +924,22 @@
             "Fn::Join": [
               "",
               [
-                "#!/bin/bash -xe\n",
+                "#!/bin/bash -v\n",
                 "yum update -y aws-cfn-bootstrap\n",
                 "# Install the files and packages from the metadata\n",
+                "\n",
+                "# Helper function\n",
+                "function error_exit\n",
+                "{\n",
+                "  /opt/aws/bin/cfn-signal -e 1 -r \"$1\" '",
+                {
+                  "Ref": "WaitHandle"
+                },
+                "'\n",
+                "  exit 1\n",
+                "}\n",
+                "\n",
+                "# Install local config\n",
                 "/opt/aws/bin/cfn-init -v ",
                 "         --stack ",
                 {
@@ -724,6 +947,17 @@
                 },
                 "         --resource AppInstance ",
                 "         --configsets All ",
+                "         --access-key ",
+                {
+                  "Ref": "HostKeys"
+                },
+                "         --secret-key ",
+                {
+                  "Fn::GetAtt": [
+                    "HostKeys",
+                    "SecretAccessKey"
+                  ]
+                },
                 "         --region ",
                 {
                   "Ref": "AWS::Region"
@@ -740,7 +974,14 @@
                 {
                   "Ref": "AWS::Region"
                 },
-                "\n"
+                "\n",
+                " > /var/tmp/cfn-init.output || error_exit 'Failed to run cfn-init'\n",
+                "# All is well so signal success\n",
+                "/opt/aws/bin/cfn-signal -e 0 -r \"App Instance setup complete\" '",
+                {
+                  "Ref": "WaitHandle"
+                },
+                "'\n"
               ]
             ]
           }
@@ -778,6 +1019,12 @@
     "VPCGroup": {
       "Type": "AWS::EC2::SecurityGroup",
       "Properties": {
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Perforce Helix VPC Group"
+          }
+        ],
         "VpcId": {
           "Ref": "VPC"
         },
@@ -785,8 +1032,8 @@
         "SecurityGroupIngress": [
           {
             "IpProtocol": "tcp",
-            "FromPort" : 0,
-            "ToPort" : 65535,
+            "FromPort": 0,
+            "ToPort": 65535,
             "CidrIp": "10.0.0.0/16"
           }
         ]
@@ -794,6 +1041,169 @@
       "Metadata": {
         "AWS::CloudFormation::Designer": {
           "id": "3cddc86c-cf7a-4d8b-b18c-19caee3dd39c"
+        }
+      }
+    },
+    "CfnUser": {
+      "Type": "AWS::IAM::User",
+      "Properties": {
+        "Path": "/",
+        "Policies": [
+          {
+            "PolicyName": "root",
+            "PolicyDocument": {
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Action": "cloudformation:DescribeStackResource",
+                  "Resource": "*"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "c44de952-cf40-47fb-bb08-40ba2abc8a81"
+        }
+      }
+    },
+    "HostKeys": {
+      "Type": "AWS::IAM::AccessKey",
+      "Properties": {
+        "UserName": {
+          "Ref": "CfnUser"
+        }
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "ebfb6947-7ff1-49dc-a2ba-ddaaabee478d"
+        }
+      }
+    },
+    "RegionRecord": {
+      "Type": "AWS::Route53::RecordSet",
+      "Properties": {
+        "HostedZoneName": {
+          "Fn::Join": [
+            "",
+            [
+              {
+                "Ref": "HostedZone"
+              },
+              "."
+            ]
+          ]
+        },
+        "Comment": "DNS name for my instance.",
+        "Name": {
+          "Fn::Join": [
+            "",
+            [
+              {
+                "Ref": "HostedShortName"
+              },
+              ".",
+              {
+                "Ref": "AWS::Region"
+              },
+              ".",
+              {
+                "Ref": "HostedZone"
+              },
+              "."
+            ]
+          ]
+        },
+        "Type": "A",
+        "TTL": "900",
+        "ResourceRecords": [
+          {
+            "Fn::GetAtt": [
+              "P4D",
+              "PublicIp"
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "63b602db-2dd2-4911-9220-775ff7fea8f9"
+        }
+      }
+    },
+    "HostRecord": {
+      "Type": "AWS::Route53::RecordSet",
+      "Properties": {
+        "HostedZoneName": {
+          "Fn::Join": [
+            "",
+            [
+              {
+                "Ref": "HostedZone"
+              },
+              "."
+            ]
+          ]
+        },
+        "Comment": "DNS name for my instance.",
+        "Name": {
+          "Fn::Join": [
+            "",
+            [
+              {
+                "Ref": "HostedShortName"
+              },
+              ".",
+              {
+                "Ref": "HostedZone"
+              },
+              "."
+            ]
+          ]
+        },
+        "Type": "A",
+        "TTL": "900",
+        "ResourceRecords": [
+          {
+            "Fn::GetAtt": [
+              "MainInstance",
+              "PublicIp"
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "54482ef1-c453-4a92-9cee-b523b71a9247"
+        }
+      }
+    },
+    "WaitHandle": {
+      "Type": "AWS::CloudFormation::WaitConditionHandle",
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "4479f2c4-0d1b-4a9e-82c7-ddb40c48d995"
+        }
+      }
+    },
+    "WaitCondition": {
+      "Type": "AWS::CloudFormation::WaitCondition",
+      "DependsOn": [
+        "P4D",
+        "MainInstance",
+        "AppInstance"
+      ],
+      "Properties": {
+        "Handle": {
+          "Ref": "WaitHandle"
+        },
+        "Timeout": "250"
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "e2299c0b-ceed-4fa3-9949-131e74bd5c3b"
         }
       }
     }
@@ -853,6 +1263,16 @@
       ],
       "ConstraintDescription": "must be a valid EC2 instance type."
     },
+    "RegistrationEMailAddress": {
+      "Description": "Your EMail Address used for License and Registration of Perforce Helix Software and Services",
+      "Type": "String",
+      "AllowedPattern": "([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)",
+      "ConstraintDescription": "Must be a valid EMail Address"
+    },
+    "AvailabilityZone": {
+      "Description": "Availability Zone",
+      "Type": "AWS::EC2::AvailabilityZone::Name"
+    },
     "KeyName": {
       "Description": "Name of an EC2 KeyPair to enable SSH access to the instance.",
       "Type": "AWS::EC2::KeyPair::KeyName",
@@ -866,6 +1286,22 @@
       "Default": "0.0.0.0/0",
       "AllowedPattern": "(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})/(\\d{1,2})",
       "ConstraintDescription": "must be a valid IP CIDR range of the form x.x.x.x/x."
+    },
+    "HostedZoneFQDN": {
+      "Type": "String",
+      "Description": "Amazon Route 53 FQDN name for your site."
+    },
+    "HostedZone": {
+      "Type": "String",
+      "Description": "The Domain of an existing Amazon Route 53 hosted zone"
+    },
+    "HostedShortName": {
+      "Type": "String",
+      "Description": "The DNS short name for an existing Amazon Route 53 Domain"
+    },
+    "HostedZoneId": {
+      "Type": "AWS::Route53::HostedZone::Id",
+      "Description": "List of available Route 53 domains curretly deployed"
     }
   },
   "Mappings": {
@@ -1060,6 +1496,90 @@
     }
   },
   "Outputs": {
+    "RegistrationEMailAddress": {
+      "Description": "Registration EMail Address",
+      "Value": {
+        "Ref": "RegistrationEMailAddress"
+      }
+    },
+    "HostedZoneId": {
+      "Description": "Route 53 Domain ID",
+      "Value": {
+        "Ref": "HostedZoneId"
+      }
+    },
+    "HostedZone": {
+      "Description": "Route 53 Domain.",
+      "Value": {
+        "Ref": "HostedZone"
+      }
+    },
+    "HostedShortName": {
+      "Value": {
+        "Ref": "HostedShortName"
+      },
+      "Description": "Short Name."
+    },
+    "HostedZoneFQDN": {
+      "Value": {
+        "Ref": "HostRecord"
+      },
+      "Description": "FQDN"
+    },
+    "PublicIp": {
+      "Value": {
+        "Fn::GetAtt": [
+          "P4D",
+          "PublicIp"
+        ]
+      },
+      "Description": "Public IP Address"
+    },
+    "PrivateIp": {
+      "Value": {
+        "Fn::GetAtt": [
+          "P4D",
+          "PrivateIp"
+        ]
+      },
+      "Description": "Private IP Address"
+    },
+    "PrivateDnsNameWebService": {
+      "Value": {
+        "Fn::GetAtt": [
+          "P4D",
+          "PrivateDnsName"
+        ]
+      },
+      "Description": "Private Domain Name"
+    },
+    "PrivateDnsP4D": {
+      "Value": {
+        "Fn::GetAtt": [
+          "P4D",
+          "PrivateDnsName"
+        ]
+      },
+      "Description": "Private Domain Name"
+    },
+    "AvailabilityZoneWebService": {
+      "Value": {
+        "Fn::GetAtt": [
+          "P4D",
+          "AvailabilityZone"
+        ]
+      },
+      "Description": "Deployed to Availability Zone"
+    },
+    "AvailabilityZoneP4D": {
+      "Value": {
+        "Fn::GetAtt": [
+          "P4D",
+          "AvailabilityZone"
+        ]
+      },
+      "Description": "Deployed to Availability Zone"
+    },
     "URL": {
       "Value": {
         "Fn::Join": [

@@ -10,3 +10,14 @@ docker_pkg:
     - refresh:    {{ docker.package.refresh }}
     - require:
       - pkgrepo:  docker_package_server
+
+# Install the python docker modules.
+python-pip:
+  pkg.installed
+
+docker_py:
+  pip.installed:
+    - name:       docker-py
+    - upgrade:    True
+    - require:
+      - pkg:      python-pip

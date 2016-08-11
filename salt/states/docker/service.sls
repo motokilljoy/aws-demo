@@ -1,6 +1,6 @@
 {% from 'docker/map.jinja' import docker with context %}
 
-docker_servce:
+docker_service:
   service.running:
     - name:     {{ docker.service.name }}
     - enable:   {{ docker.service.enable }}

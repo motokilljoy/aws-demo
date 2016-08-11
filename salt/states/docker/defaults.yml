@@ -1,0 +1,5 @@
+docker:
+  package:
+    name:       docker-engine
+    version:    ''
+    refresh:    True

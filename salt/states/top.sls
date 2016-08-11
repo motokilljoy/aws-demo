@@ -1,4 +1,7 @@
 base:
+  '*':
+    - docker
+
   'master':
     - haproxy
 

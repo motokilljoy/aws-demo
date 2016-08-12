@@ -1,6 +1,6 @@
 {% from 'docker/map.jinja' import docker with context %}
 
-{% for image_name, image in docker.container.items() %}
+{% for image_name, image in docker.get('container', {}).items() %}
 
 docker_image_{{ image_name }}:
   dockerng.running:

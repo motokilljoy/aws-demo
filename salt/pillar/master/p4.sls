@@ -1,5 +1,6 @@
 p4:
   broker:
+    base_install: True
     config:
       perforce-broker:
         path:   /etc/perforce/p4broker.conf

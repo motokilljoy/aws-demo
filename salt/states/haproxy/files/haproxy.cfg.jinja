@@ -63,10 +63,10 @@ listen p4broker-ssl
   timeout   client        60m
   timeout   server        60m
 
-  server    p4d-host      127.0.0.1:8666
+  server    master        127.0.0.1:8666
 
 listen perforce-swarm
   bind      *:80
   bind      *:443
 
-  server    app-host      10.0.0.101:80
+  server    app-host      {{ salt['mine.get']('app-host', 'network.ip_addrs')['app-host'][-1] }}:80

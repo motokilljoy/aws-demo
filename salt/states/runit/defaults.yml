@@ -1,0 +1,9 @@
+runit:
+  package:
+    name:         runit
+    version:      latest
+  service:
+    name:         runsvdir
+    enable:       True
+  available_dir:  /etc/services-available
+  enabled_dir:    /etc/service

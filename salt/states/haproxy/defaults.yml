@@ -2,7 +2,6 @@ haproxy:
   package:
     name:     haproxy
     refresh:  True
-    version:  1.5.14
     source:   vbernat/haproxy-1.5
   service:
     name:     haproxy

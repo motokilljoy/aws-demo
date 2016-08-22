@@ -33,7 +33,7 @@ ID="$2"
 
 # setup the salt minion (and master)
 if [ ! -e /etc/init.d/salt-minion ]; then
-	yum install -y wget curl psmisc net-tools || die "failed to install curl"
+	apt-get install -y wget curl psmisc net-tools || die "failed to install curl"
 	curl -o bootstrap_salt.sh -L https://bootstrap.saltstack.com || die "failed to get salt bootstrap"
 
 	OPTS=""

@@ -6,8 +6,6 @@ runit_service_available_dir:
     - user:     root
     - group:    root
     - mode:     775
-    - require:
-      - pkg:    runit_package
 
 runit_service_enabled_dir:
   file.directory:
@@ -15,5 +13,3 @@ runit_service_enabled_dir:
     - user:     root
     - group:    root
     - mode:     775
-    - require:
-      - pkg:    runit_package

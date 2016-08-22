@@ -5,7 +5,11 @@ runit_service:
     - name:     {{ runit.service.name }}
     - enable:   {{ runit.service.enable }}
     - require:
+{% if grains['os_family'] == 'Debian' %}
       - pkg:    {{ runit.package.name }}
+{% elif grains['os_family'] == 'RedHat' %}
+      - archive: runit_package_source_download
+{% endif %}
 
 runit-service-reload:
   module.wait:

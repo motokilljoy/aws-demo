@@ -4,4 +4,4 @@ exec 2>&1
 
 # Start the broker
 exec chpst -uperforce \
-    p4broker -c /etc/perforce/p4broker.conf
+    /opt/perforce/sbin/p4broker -c /etc/perforce/p4broker.conf

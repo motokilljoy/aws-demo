@@ -1,0 +1,9 @@
+users:
+  perforce:
+    fullname:         Perforce
+    password:         '!'
+    enforce_password: True
+    uid:              1666
+    prime_group:
+      name:           perforce
+      gid:            1666

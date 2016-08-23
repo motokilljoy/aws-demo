@@ -7,3 +7,8 @@ users:
     prime_group:
       name:           perforce
       gid:            1666
+    user_files:
+      directories:
+        perforce_dir:
+          path:       /etc/perforce
+          mode:       755

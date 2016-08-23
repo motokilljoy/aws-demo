@@ -68,7 +68,7 @@ runit_service_{{ service_name }}_log_config_file:
     - name:     {{ runit.available_dir }}/{{ service_name}}/log/config
     - user:     {{ service_user }}
     - group:    {{ service_group }}
-    - source:   {{ service.get('log_config_file', 'salt://services/runit/files/default_log_config') }}
+    - source:   {{ service.get('log_config_file', 'salt://runit/files/default_log_config') }}
     - mode:     770
     - require:
       - file:     runit_service_{{ service_name }}_log_dir

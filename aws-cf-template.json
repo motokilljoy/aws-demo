@@ -1,11 +1,38 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Perforce Helix Deployment for AWS",
+  "Conditions": {
+    "ProdNotify": {
+      "Fn::Equals": [
+        {
+          "Ref": "EnvironmentType"
+        },
+        "Production"
+      ]
+    },
+    "EvalNotify": {
+      "Fn::Equals": [
+        {
+          "Ref": "EnvironmentType"
+        },
+        "Evaluation"
+      ]
+    },
+    "DevNotify": {
+      "Fn::Equals": [
+        {
+          "Ref": "EnvironmentType"
+        },
+        "Development"
+      ]
+    }
+  },
   "Metadata": {
     "AWS::CloudFormation::Designer": {
       "de5f09d3-bd08-47ff-a666-9df0f48fb27d": {
         "size": {
-          "width": 1110,
-          "height": 720
+          "width": 600,
+          "height": 350
         },
         "position": {
           "x": 30,
@@ -22,10 +49,10 @@
       "7c798387-f8e7-4bf7-9588-93d035bc1344": {
         "size": {
           "width": 540,
-          "height": 300
+          "height": 200
         },
         "position": {
-          "x": 60,
+          "x": 40,
           "y": 240
         },
         "z": 2,
@@ -33,7 +60,8 @@
         "embeds": [
           "d7fbeb02-b237-4fec-b356-3296c696abd6",
           "7dec3d16-20db-4fb1-aa62-e3929c55c423",
-          "e99f9396-0b69-4f3f-ac8f-b676d2743c7c"
+          "e99f9396-0b69-4f3f-ac8f-b676d2743c7c",
+          "74e342ff-d292-4dfd-9f78-61873c063cbe"
         ]
       },
       "d7fbeb02-b237-4fec-b356-3296c696abd6": {
@@ -42,8 +70,8 @@
           "height": 60
         },
         "position": {
-          "x": 180,
-          "y": 330
+          "x": 140,
+          "y": 280
         },
         "z": 3,
         "parent": "7c798387-f8e7-4bf7-9588-93d035bc1344",
@@ -90,15 +118,15 @@
         "target": {
           "id": "de5f09d3-bd08-47ff-a666-9df0f48fb27d"
         },
-        "z": 0
+        "z": 1
       },
       "bbfa4c46-3b78-4794-aef1-26666bb77863": {
         "size": {
           "width": 210,
-          "height": 270
+          "height": 200
         },
         "position": {
-          "x": 390,
+          "x": 410,
           "y": 240
         },
         "z": 2,
@@ -113,7 +141,7 @@
           "height": 60
         },
         "position": {
-          "x": 390,
+          "x": 440,
           "y": 300
         },
         "z": 3,
@@ -215,7 +243,7 @@
         "target": {
           "id": "7c798387-f8e7-4bf7-9588-93d035bc1344"
         },
-        "z": 1
+        "z": 2
       },
       "d0adcc42-0a42-43b1-902d-71c163572552": {
         "source": {
@@ -234,8 +262,8 @@
           "height": 60
         },
         "position": {
-          "x": 270,
-          "y": 330
+          "x": 240,
+          "y": 280
         },
         "z": 3,
         "parent": "7c798387-f8e7-4bf7-9588-93d035bc1344",
@@ -280,8 +308,8 @@
           "height": 60
         },
         "position": {
-          "x": 90,
-          "y": 330
+          "x": 60,
+          "y": 280
         },
         "z": 3,
         "parent": "7c798387-f8e7-4bf7-9588-93d035bc1344",
@@ -301,8 +329,8 @@
           "height": 60
         },
         "position": {
-          "x": 120,
-          "y": 180
+          "x": 110,
+          "y": 150
         },
         "z": 2,
         "parent": "de5f09d3-bd08-47ff-a666-9df0f48fb27d",
@@ -314,8 +342,8 @@
           "height": 60
         },
         "position": {
-          "x": 60,
-          "y": 870
+          "x": 30,
+          "y": 500
         },
         "z": 1,
         "embeds": []
@@ -326,8 +354,8 @@
           "height": 60
         },
         "position": {
-          "x": 180,
-          "y": 870
+          "x": 110,
+          "y": 500
         },
         "z": 1,
         "embeds": []
@@ -338,8 +366,8 @@
           "height": 60
         },
         "position": {
-          "x": 300,
-          "y": 870
+          "x": 200,
+          "y": 500
         },
         "z": 1,
         "embeds": [],
@@ -353,11 +381,14 @@
           "height": 60
         },
         "position": {
-          "x": 420,
-          "y": 870
+          "x": 280,
+          "y": 500
         },
         "z": 1,
         "embeds": [],
+        "dependson": [
+          "2f821a16-d170-4216-9baa-5a08ea83a3bc"
+        ],
         "isrelatedto": [
           "d7fbeb02-b237-4fec-b356-3296c696abd6"
         ]
@@ -368,8 +399,8 @@
           "height": 60
         },
         "position": {
-          "x": 540,
-          "y": 870
+          "x": 400,
+          "y": 500
         },
         "z": 1,
         "embeds": [],
@@ -388,25 +419,121 @@
           "height": 60
         },
         "position": {
-          "x": 660,
-          "y": 870
+          "x": 480,
+          "y": 500
         },
         "z": 1,
         "embeds": [],
+        "dependson": [
+          "2f821a16-d170-4216-9baa-5a08ea83a3bc"
+        ],
         "isrelatedto": [
+          "e99f9396-0b69-4f3f-ac8f-b676d2743c7c",
+          "d7fbeb02-b237-4fec-b356-3296c696abd6"
+        ]
+      },
+      "2f821a16-d170-4216-9baa-5a08ea83a3bc": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 580,
+          "y": 500
+        },
+        "z": 1,
+        "embeds": [],
+        "isconnectedto": [
+          "d7fbeb02-b237-4fec-b356-3296c696abd6"
+        ]
+      },
+      "e7baa254-9c68-48c2-9699-f41aa1c79319": {
+        "source": {
+          "id": "54482ef1-c453-4a92-9cee-b523b71a9247"
+        },
+        "target": {
+          "id": "2f821a16-d170-4216-9baa-5a08ea83a3bc"
+        },
+        "z": 4
+      },
+      "ec50305f-72d6-4d57-a743-8abeb9f2dc1f": {
+        "source": {
+          "id": "63b602db-2dd2-4911-9220-775ff7fea8f9"
+        },
+        "target": {
+          "id": "2f821a16-d170-4216-9baa-5a08ea83a3bc"
+        },
+        "z": 5
+      },
+      "74e342ff-d292-4dfd-9f78-61873c063cbe": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 340,
+          "y": 280
+        },
+        "z": 3,
+        "parent": "7c798387-f8e7-4bf7-9588-93d035bc1344",
+        "embeds": [],
+        "dependson": [
           "e99f9396-0b69-4f3f-ac8f-b676d2743c7c"
         ]
+      },
+      "e582df4b-6414-4ab0-ac1e-ded44e1c941d": {
+        "source": {
+          "id": "74e342ff-d292-4dfd-9f78-61873c063cbe"
+        },
+        "target": {
+          "id": "e99f9396-0b69-4f3f-ac8f-b676d2743c7c"
+        },
+        "z": 4
       }
     }
   },
   "Resources": {
+    "MainEIP": {
+      "Type": "AWS::EC2::EIP",
+      "Condition": "ProdNotify",
+      "Properties": {
+        "InstanceId": {
+          "Ref": "MainInstance"
+        },
+        "Domain": "vpc"
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "2f821a16-d170-4216-9baa-5a08ea83a3bc"
+        }
+      }
+    },
     "VPC": {
       "Type": "AWS::EC2::VPC",
       "Properties": {
         "Tags": [
           {
             "Key": "Name",
-            "Value": "Perforce Helix VPC"
+            "Value": {
+              "Fn::Join": [
+                " - ",
+                [
+                  {
+                    "Fn::FindInMap": [
+                      "Environments",
+                      {
+                        "Ref": "EnvironmentType"
+                      },
+                      "ValueTags"
+                    ]
+                  },
+                  "Perforce Helix VPC",
+                  {
+                    "Ref": "AWS::StackName"
+                  }
+                ]
+              ]
+            }
           }
         ],
         "EnableDnsSupport": "true",
@@ -429,7 +556,26 @@
         "Tags": [
           {
             "Key": "Name",
-            "Value": "Perforce Helix Subnet"
+            "Value": {
+              "Fn::Join": [
+                " - ",
+                [
+                  {
+                    "Fn::FindInMap": [
+                      "Environments",
+                      {
+                        "Ref": "EnvironmentType"
+                      },
+                      "ValueTags"
+                    ]
+                  },
+                  "Perforce Helix Subnet",
+                  {
+                    "Ref": "AWS::StackName"
+                  }
+                ]
+              ]
+            }
           }
         ]
       },
@@ -445,7 +591,26 @@
         "Tags": [
           {
             "Key": "Name",
-            "Value": "Perforce Helix Main Server SecurityGroup"
+            "Value": {
+              "Fn::Join": [
+                " - ",
+                [
+                  {
+                    "Fn::FindInMap": [
+                      "Environments",
+                      {
+                        "Ref": "EnvironmentType"
+                      },
+                      "ValueTags"
+                    ]
+                  },
+                  "Perforce Helix Main Server SecurityGroup",
+                  {
+                    "Ref": "AWS::StackName"
+                  }
+                ]
+              ]
+            }
           }
         ],
         "VpcId": {
@@ -489,33 +654,52 @@
     },
     "InternetGateway": {
       "Type": "AWS::EC2::InternetGateway",
-      "Properties": {
-        "Tags": [
-          {
-            "Key": "Name",
-            "Value": "Perforce Helix InternetGateway"
-          }
-        ]
-      },
       "Metadata": {
         "AWS::CloudFormation::Designer": {
           "id": "0b028277-3ce0-4fb5-903d-19337ab182dc"
         }
+      },
+      "Properties": {
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": {
+              "Fn::Join": [
+                " - ",
+                [
+                  {
+                    "Fn::FindInMap": [
+                      "Environments",
+                      {
+                        "Ref": "EnvironmentType"
+                      },
+                      "ValueTags"
+                    ]
+                  },
+                  "Perforce Helix InternetGateway",
+                  {
+                    "Ref": "AWS::StackName"
+                  }
+                ]
+              ]
+            }
+          }
+        ]
       }
     },
     "VPCGatewayAttachment": {
       "Type": "AWS::EC2::VPCGatewayAttachment",
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "1b801c2d-1cf5-4b8f-bdc0-93d786e252a0"
+        }
+      },
       "Properties": {
         "InternetGatewayId": {
           "Ref": "InternetGateway"
         },
         "VpcId": {
           "Ref": "VPC"
-        }
-      },
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "1b801c2d-1cf5-4b8f-bdc0-93d786e252a0"
         }
       }
     },
@@ -525,7 +709,26 @@
         "Tags": [
           {
             "Key": "Name",
-            "Value": "Perforce Helix PublicRouteTable"
+            "Value": {
+              "Fn::Join": [
+                " - ",
+                [
+                  {
+                    "Fn::FindInMap": [
+                      "Environments",
+                      {
+                        "Ref": "EnvironmentType"
+                      },
+                      "ValueTags"
+                    ]
+                  },
+                  "Perforce Helix PublicRouteTable",
+                  {
+                    "Ref": "AWS::StackName"
+                  }
+                ]
+              ]
+            }
           }
         ],
         "VpcId": {
@@ -580,7 +783,26 @@
         "Tags": [
           {
             "Key": "Name",
-            "Value": "Perforce Helix Main Server"
+            "Value": {
+              "Fn::Join": [
+                " - ",
+                [
+                  {
+                    "Fn::FindInMap": [
+                      "Environments",
+                      {
+                        "Ref": "EnvironmentType"
+                      },
+                      "ValueTags"
+                    ]
+                  },
+                  "Perforce Helix Main Server",
+                  {
+                    "Ref": "AWS::StackName"
+                  }
+                ]
+              ]
+            }
           }
         ],
         "InstanceType": {
@@ -732,11 +954,30 @@
         "Tags": [
           {
             "Key": "Name",
-            "Value": "Perforce Helix P4D Server"
+            "Value": {
+              "Fn::Join": [
+                " - ",
+                [
+                  {
+                    "Fn::FindInMap": [
+                      "Environments",
+                      {
+                        "Ref": "EnvironmentType"
+                      },
+                      "ValueTags"
+                    ]
+                  },
+                  "Perforce Helix P4D Server",
+                  {
+                    "Ref": "AWS::StackName"
+                  }
+                ]
+              ]
+            }
           }
         ],
         "InstanceType": {
-          "Ref": "InstanceType"
+          "Ref": "InstanceTypeP4D"
         },
         "ImageId": {
           "Fn::FindInMap": [
@@ -877,7 +1118,26 @@
         "Tags": [
           {
             "Key": "Name",
-            "Value": "Perforce Helix App Server"
+            "Value": {
+              "Fn::Join": [
+                " - ",
+                [
+                  {
+                    "Fn::FindInMap": [
+                      "Environments",
+                      {
+                        "Ref": "EnvironmentType"
+                      },
+                      "ValueTags"
+                    ]
+                  },
+                  "Perforce Helix App Server",
+                  {
+                    "Ref": "AWS::StackName"
+                  }
+                ]
+              ]
+            }
           }
         ],
         "InstanceType": {
@@ -1022,7 +1282,26 @@
         "Tags": [
           {
             "Key": "Name",
-            "Value": "Perforce Helix VPC Group"
+            "Value": {
+              "Fn::Join": [
+                " - ",
+                [
+                  {
+                    "Fn::FindInMap": [
+                      "Environments",
+                      {
+                        "Ref": "EnvironmentType"
+                      },
+                      "ValueTags"
+                    ]
+                  },
+                  "Perforce Helix VPC Group",
+                  {
+                    "Ref": "AWS::StackName"
+                  }
+                ]
+              ]
+            }
           }
         ],
         "VpcId": {
@@ -1044,19 +1323,22 @@
         }
       }
     },
-    "CfnUser": {
+    "PerforceHelixIAMUser": {
       "Type": "AWS::IAM::User",
       "Properties": {
         "Path": "/",
         "Policies": [
           {
-            "PolicyName": "root",
+            "PolicyName": "PerforceHelixR53DNSPolicy",
             "PolicyDocument": {
               "Statement": [
                 {
                   "Effect": "Allow",
-                  "Action": "cloudformation:DescribeStackResource",
-                  "Resource": "*"
+                  "Action": [
+                    "cloudformation:DescribeStackResource",
+                    "route53:ChangeResourceRecordSets"
+                  ],
+                  "Resource": "arn:aws:route53:::change/*"
                 }
               ]
             }
@@ -1073,7 +1355,7 @@
       "Type": "AWS::IAM::AccessKey",
       "Properties": {
         "UserName": {
-          "Ref": "CfnUser"
+          "Ref": "PerforceHelixIAMUser"
         }
       },
       "Metadata": {
@@ -1084,6 +1366,7 @@
     },
     "RegionRecord": {
       "Type": "AWS::Route53::RecordSet",
+      "Condition": "ProdNotify",
       "Properties": {
         "HostedZoneName": {
           "Fn::Join": [
@@ -1102,7 +1385,7 @@
             "",
             [
               {
-                "Ref": "HostedShortName"
+                "Ref": "SiteName"
               },
               ".",
               {
@@ -1121,7 +1404,7 @@
         "ResourceRecords": [
           {
             "Fn::GetAtt": [
-              "P4D",
+              "MainInstance",
               "PublicIp"
             ]
           }
@@ -1131,10 +1414,14 @@
         "AWS::CloudFormation::Designer": {
           "id": "63b602db-2dd2-4911-9220-775ff7fea8f9"
         }
-      }
+      },
+      "DependsOn": [
+        "MainEIP"
+      ]
     },
     "HostRecord": {
       "Type": "AWS::Route53::RecordSet",
+      "Condition": "ProdNotify",
       "Properties": {
         "HostedZoneName": {
           "Fn::Join": [
@@ -1153,7 +1440,7 @@
             "",
             [
               {
-                "Ref": "HostedShortName"
+                "Ref": "SiteName"
               },
               ".",
               {
@@ -1178,7 +1465,10 @@
         "AWS::CloudFormation::Designer": {
           "id": "54482ef1-c453-4a92-9cee-b523b71a9247"
         }
-      }
+      },
+      "DependsOn": [
+        "MainEIP"
+      ]
     },
     "WaitHandle": {
       "Type": "AWS::CloudFormation::WaitConditionHandle",
@@ -1206,11 +1496,11 @@
           "id": "e2299c0b-ceed-4fa3-9949-131e74bd5c3b"
         }
       }
-    }
+    },
   },
   "Parameters": {
     "InstanceType": {
-      "Description": "MainInstance EC2 instance type",
+      "Description": "[Required]:: MainInstance EC2 instance type",
       "Type": "String",
       "Default": "t2.micro",
       "AllowedValues": [
@@ -1263,23 +1553,88 @@
       ],
       "ConstraintDescription": "must be a valid EC2 instance type."
     },
+    "InstanceTypeP4D": {
+      "Description": "[Required]:: P4D Instance EC2 instance type",
+      "Type": "String",
+      "Default": "t2.micro",
+      "AllowedValues": [
+        "t1.micro",
+        "t2.micro",
+        "t2.small",
+        "t2.medium",
+        "m1.small",
+        "m1.medium",
+        "m1.large",
+        "m1.xlarge",
+        "m2.xlarge",
+        "m2.2xlarge",
+        "m2.4xlarge",
+        "m3.medium",
+        "m3.large",
+        "m3.xlarge",
+        "m3.2xlarge",
+        "c1.medium",
+        "c1.xlarge",
+        "c3.large",
+        "c3.xlarge",
+        "c3.2xlarge",
+        "c3.4xlarge",
+        "c3.8xlarge",
+        "c4.large",
+        "c4.xlarge",
+        "c4.2xlarge",
+        "c4.4xlarge",
+        "c4.8xlarge",
+        "g2.2xlarge",
+        "r3.large",
+        "r3.xlarge",
+        "r3.2xlarge",
+        "r3.4xlarge",
+        "r3.8xlarge",
+        "i2.xlarge",
+        "i2.2xlarge",
+        "i2.4xlarge",
+        "i2.8xlarge",
+        "d2.xlarge",
+        "d2.2xlarge",
+        "d2.4xlarge",
+        "d2.8xlarge",
+        "hi1.4xlarge",
+        "hs1.8xlarge",
+        "cr1.8xlarge",
+        "cc2.8xlarge",
+        "cg1.4xlarge"
+      ],
+      "ConstraintDescription": "must be a valid EC2 instance type."
+    },
+    "EnvironmentType": {
+      "Description": "[Required]:: Type of Environment to deploy: [Production]: Ready for preexisting Public Route53 Zone and Elastic IP Services. [Evaluation]: Ready for Software Evaluation at minimal costs. [Development]: Ready for Stack modifications.",
+      "Type": "String",
+      "Default": "Evaluation",
+      "AllowedValues": [
+        "Production",
+        "Evaluation",
+        "Development"
+      ],
+      "ConstraintDescription": "Must specify Production, Evaluation, or Development."
+    },
     "RegistrationEMailAddress": {
-      "Description": "Your EMail Address used for License and Registration of Perforce Helix Software and Services",
+      "Description": "[Required]:: Your EMail Address used for License and Registration of Perforce Helix Software and Services",
       "Type": "String",
       "AllowedPattern": "([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)",
       "ConstraintDescription": "Must be a valid EMail Address"
     },
     "AvailabilityZone": {
-      "Description": "Availability Zone",
+      "Description": "[Required]:: AWS EC2 Availability Zone",
       "Type": "AWS::EC2::AvailabilityZone::Name"
     },
     "KeyName": {
-      "Description": "Name of an EC2 KeyPair to enable SSH access to the instance.",
+      "Description": "[Required]:: Name of an EC2 KeyPair to enable SSH access to the instance.",
       "Type": "AWS::EC2::KeyPair::KeyName",
       "ConstraintDescription": "must be the name of an existing EC2 KeyPair."
     },
     "SSHLocation": {
-      "Description": " The IP address range that can be usedto access the web server using SSH.",
+      "Description": "The IP address range that can be usedto access the web server using SSH.",
       "Type": "String",
       "MinLength": "9",
       "MaxLength": "18",
@@ -1287,21 +1642,24 @@
       "AllowedPattern": "(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})/(\\d{1,2})",
       "ConstraintDescription": "must be a valid IP CIDR range of the form x.x.x.x/x."
     },
-    "HostedZoneFQDN": {
+    "P4DSuperPass": {
+      "NoEcho": "true",
+      "Description": "[Required]:: The P4D Super account password, 8 to 1024 characters in length",
       "Type": "String",
-      "Description": "Amazon Route 53 FQDN name for your site."
+      "MinLength": "8",
+      "MaxLength": "1024"
+    },
+    "SiteName": {
+      "Description": "[Production]:: *The DNS short name for an existing Amazon Route53 Domain | [Evaluation]: Leave empty. | [Development]: Leave empty. | [Example]: helix-cloud",
+      "Type": "String",
+      "AllowedPattern": "^[_A-Za-z0-9][-A-Za-z0-9]*[A-Za-z0-9]$|^$",
+      "ConstraintDescription": "Must be a valid HostName"
     },
     "HostedZone": {
+      "Description": "[Production]:: *The Domain of an pre-existing Amazon Route53 hosted zone. | [Evaluation]: Leave empty. | [Development]: Leave empty. | [Example]: perforce.com ",
       "Type": "String",
-      "Description": "The Domain of an existing Amazon Route 53 hosted zone"
-    },
-    "HostedShortName": {
-      "Type": "String",
-      "Description": "The DNS short name for an existing Amazon Route 53 Domain"
-    },
-    "HostedZoneId": {
-      "Type": "AWS::Route53::HostedZone::Id",
-      "Description": "List of available Route 53 domains curretly deployed"
+      "AllowedPattern": "^(?!-)[a-zA-Z0-9-.]{1,63}(?<!-)$|^$",
+      "ConstraintDescription": "Production:: Must be a valid Public Domain that is available in Route53 | Evaluation: NULL | Development: NULL"
     }
   },
   "Mappings": {
@@ -1493,94 +1851,176 @@
         "HVM64": "ami-f239abcb",
         "HVMG2": "NOT_SUPPORTED"
       }
+    },
+    "Environments": {
+      "Evaluation": {
+        "ValueTags": "Eval"
+      },
+      "Production": {
+        "ValueTags": "Prod"
+      },
+      "Development": {
+        "ValueTags": "Dev"
+      }
     }
   },
   "Outputs": {
+    "EnvironmentType": {
+      "Description": "Deployment Type.",
+      "Value": {
+        "Ref": "EnvironmentType"
+      }
+    },
     "RegistrationEMailAddress": {
-      "Description": "Registration EMail Address",
+      "Description": "Registration EMail Address.",
       "Value": {
         "Ref": "RegistrationEMailAddress"
       }
     },
-    "HostedZoneId": {
-      "Description": "Route 53 Domain ID",
-      "Value": {
-        "Ref": "HostedZoneId"
-      }
-    },
     "HostedZone": {
       "Description": "Route 53 Domain.",
+      "Condition": "ProdNotify",
       "Value": {
         "Ref": "HostedZone"
       }
     },
-    "HostedShortName": {
+    "SiteName": {
+      "Description": "Site name.",
+      "Condition": "ProdNotify",
       "Value": {
-        "Ref": "HostedShortName"
-      },
-      "Description": "Short Name."
+        "Ref": "SiteName"
+      }
     },
     "HostedZoneFQDN": {
+      "Description": "FQDN.",
+      "Condition": "ProdNotify",
       "Value": {
         "Ref": "HostRecord"
-      },
-      "Description": "FQDN"
+      }
     },
     "PublicIp": {
+      "Description": "Public IP Address for your Deployment.",
       "Value": {
         "Fn::GetAtt": [
-          "P4D",
+          "MainInstance",
           "PublicIp"
         ]
-      },
-      "Description": "Public IP Address"
+      }
     },
-    "PrivateIp": {
+    "PrivateIpMainInstance": {
+      "Description": "Private IP Address for MainInstance.",
+      "Condition": "DevNotify",
+      "Value": {
+        "Fn::GetAtt": [
+          "MainInstance",
+          "PrivateIp"
+        ]
+      }
+    },
+    "PrivateIpAppInstance": {
+      "Description": "Private IP Address for AppInstance.",
+      "Condition": "DevNotify",
+      "Value": {
+        "Fn::GetAtt": [
+          "AppInstance",
+          "PrivateIp"
+        ]
+      }
+    },
+    "PrivateIpP4D": {
+      "Description": "Private IP Address for P4D.",
+      "Condition": "DevNotify",
       "Value": {
         "Fn::GetAtt": [
           "P4D",
           "PrivateIp"
         ]
-      },
-      "Description": "Private IP Address"
+      }
     },
-    "PrivateDnsNameWebService": {
+    "PrivateDnsNameMainInstance": {
+      "Description": "Private Domain Name.",
+      "Condition": "DevNotify",
+      "Value": {
+        "Fn::GetAtt": [
+          "MainInstance",
+          "PrivateDnsName"
+        ]
+      }
+    },
+    "PrivateDnsNameAppInstance": {
+      "Description": "Private Domain Name.",
+      "Condition": "DevNotify",
+      "Value": {
+        "Fn::GetAtt": [
+          "AppInstance",
+          "PrivateDnsName"
+        ]
+      }
+    },
+    "PrivateDnsNameP4D": {
+      "Description": "Private Domain Name.",
+      "Condition": "DevNotify",
       "Value": {
         "Fn::GetAtt": [
           "P4D",
           "PrivateDnsName"
         ]
-      },
-      "Description": "Private Domain Name"
+      }
     },
-    "PrivateDnsP4D": {
+    "PublicDnsMainInstance": {
+      "Description": "Public Domain Name for your deployment.",
       "Value": {
         "Fn::GetAtt": [
-          "P4D",
-          "PrivateDnsName"
+          "MainInstance",
+          "PublicDnsName"
         ]
-      },
-      "Description": "Private Domain Name"
+      }
     },
-    "AvailabilityZoneWebService": {
+    "AvailabilityZoneMainInstance": {
+      "Description": "MainInstance Deployed to Availability Zone.",
       "Value": {
         "Fn::GetAtt": [
-          "P4D",
+          "AppInstance",
           "AvailabilityZone"
         ]
-      },
-      "Description": "Deployed to Availability Zone"
+      }
+    },
+    "AvailabilityZoneAppInstance": {
+      "Description": "AppInstance Deployed to Availability Zone.",
+      "Value": {
+        "Fn::GetAtt": [
+          "AppInstance",
+          "AvailabilityZone"
+        ]
+      }
     },
     "AvailabilityZoneP4D": {
+      "Description": "P4D Deployed to Availability Zone.",
       "Value": {
         "Fn::GetAtt": [
           "P4D",
           "AvailabilityZone"
         ]
-      },
-      "Description": "Deployed to Availability Zone"
+      }
     },
-    "URL": {
+    "ProdURL": {
+      "Description": "Perforce Helix application URL.",
+      "Condition": "ProdNotify",
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "http://",
+            {
+              "Ref": "HostRecord"
+            }
+          ]
+        ]
+      }
+    },
+    "EvalURL": {
+      "Description": "Perforce Helix application URL.",
+      "Condition": "EvalNotify",
       "Value": {
         "Fn::Join": [
           "",
@@ -1589,15 +2029,33 @@
             {
               "Fn::GetAtt": [
                 "MainInstance",
-                "PublicIp"
+                "PublicDnsName"
               ]
             }
           ]
         ]
-      },
-      "Description": "Newly created application URL"
+      }
+    },
+    "DevURL": {
+      "Description": "Perforce Helix application URL.",
+      "Condition": "DevNotify",
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "http://",
+            {
+              "Fn::GetAtt": [
+                "MainInstance",
+                "PublicDnsName"
+              ]
+            }
+          ]
+        ]
+      }
     },
     "P4PORT": {
+      "Description": "Perforce P4PORT.",
       "Value": {
         "Fn::Join": [
           "",
@@ -1611,8 +2069,7 @@
             ":1666"
           ]
         ]
-      },
-      "Description": "Newly created P4PORT"
+      }
     }
   }
 }

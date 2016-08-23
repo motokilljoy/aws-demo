@@ -10,7 +10,10 @@ if [ "$1" = "fork" ]; then
 			sleep 5
 			salt '*' test.ping | logger
 			DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-			sh DIR/salt-deploy.sh
+			sh $DIR/salt-deploy.sh | logger
+			# in AWS you would send a notification to a WaitConditionHandle
+			# to let it know if we were successful
+			exit $?
 		fi
 		logger "waiting for salt minions to register"
 		salt-key -L | logger

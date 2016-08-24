@@ -38,15 +38,14 @@ if [ ! -e /etc/init.d/salt-minion ]; then
 
 	OPTS=""
 	if [ "$ID" = "master" ]; then 
-		OPTS="-M"
+		yum install -y GitPython python-yaml || die "Failed to install GitPython on master."
+		OPTS="-M -J {\"interface\":\"$MASTER_IP\",\"gitfs_remotes\":[\"https://github.com/robinsonj/perforce-formula\"],\"fileserver_backend\":[\"git\",\"roots\"]}"
 	fi
 
 	sh bootstrap_salt.sh $OPTS || die "failed to bootstrap salt"
 fi
 
 if [ "$ID" = "master" ]; then 
-	sed -i "s/#interface:.*/interface: $MASTER_IP/" /etc/salt/master || die "failed to setup master"
-	restart_salt master || die "failed to restart master"
 	DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 	sh $DIR/key_wait.sh
 fi

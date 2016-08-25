@@ -12,3 +12,6 @@ users:
         perforce_dir:
           path:       /etc/perforce
           mode:       755
+        perforce_log_dir:
+          path:       /var/log/perforce
+          mode:       755

@@ -74,9 +74,6 @@ users_files_{{ user_name }}_{{ dir_name }}_directory:
     - group:    {{ user_group }}
     - mode:     {{ dir.get('mode', 770) }}
     - makedirs: True
-    - recurse:
-      - user
-      - group
     - require:
       - user:   users_{{ user_name }}_user
       {% for require_type, require in dir.get('require', []) %}

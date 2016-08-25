@@ -1,0 +1,15 @@
+Environment
+{
+  PATH              = /bin:/usr/bin:/usr/local/bin
+}
+
+p4broker broker-main
+{
+  Owner             = perforce
+  Execute           = /opt/perforce/sbin/p4broker
+
+  Environment
+  {
+    P4BROKEROPTIONS = "-c /etc/perforce/p4broker.conf"
+  }
+}

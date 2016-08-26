@@ -10,5 +10,6 @@ base:
 
   'p4d-host':
     - p4.server
+    - p4.p4dctl
 
   'app-host': []

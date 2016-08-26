@@ -852,22 +852,10 @@
             "Fn::Join": [
               "",
               [
-                "#!/bin/bash -v\n",
+                "#!/bin/bash -xe\n",
                 "yum update -y aws-cfn-bootstrap\n",
                 "# Install the files and packages from the metadata\n",
                 "\n",
-                "# Helper function\n",
-                "function error_exit\n",
-                "{\n",
-                "  /opt/aws/bin/cfn-signal -e 1 -r \"$1\" '",
-                {
-                  "Ref": "WaitHandle"
-                },
-                "'\n",
-                "  exit 1\n",
-                "}\n",
-                "\n",
-                "# Install local config\n",
                 "/opt/aws/bin/cfn-init -v ",
                 "         --stack ",
                 {
@@ -875,17 +863,6 @@
                 },
                 "         --resource MainInstance ",
                 "         --configsets All ",
-                "         --access-key ",
-                {
-                  "Ref": "HostKeys"
-                },
-                "         --secret-key ",
-                {
-                  "Fn::GetAtt": [
-                    "HostKeys",
-                    "SecretAccessKey"
-                  ]
-                },
                 "         --region ",
                 {
                   "Ref": "AWS::Region"
@@ -903,7 +880,6 @@
                   "Ref": "AWS::Region"
                 },
                 "\n",
-                " > /var/tmp/cfn-init.output || error_exit 'Failed to run cfn-init'\n",
                 "# All is well so signal success\n",
                 "/opt/aws/bin/cfn-signal -e 0 -r \"Main Instance Stack setup complete\" '",
                 {
@@ -922,23 +898,21 @@
         "AWS::CloudFormation::Init": {
           "configSets": {
             "All": [
-              "SaltMaster"
+              "Install"
             ]
           },
-          "SaltMaster": {
-            "files": {
-              "/tmp/init.sh": {
-                "source": "https://s3-us-west-1.amazonaws.com/perforce-doug-test/salt-for-aws-cf/setup/init.sh",
-                "mode": "0755"
-              },
-              "/tmp/key_wait.sh": {
-                "source": "https://s3-us-west-1.amazonaws.com/perforce-doug-test/salt-for-aws-cf/setup/key_wait.sh",
-                "mode": "0755"
+          "Install": {
+            "packages": {
+              "yum" : {
+                "git" : []
               }
             },
             "commands": {
-              "setupMinion": {
-                "command": "/tmp/init.sh 10.0.0.101 master"
+              "01_pull_source": {
+                "command": "git clone https://github.com/dougscheirer/aws-demo.git /tmp/aws-demo"
+              },
+              "02_bootstrap": {
+                "command": "bash /tmp/aws-demo/setup/init.sh 10.0.0.101 app-host"
               }
             }
           }
@@ -1020,22 +994,10 @@
             "Fn::Join": [
               "",
               [
-                "#!/bin/bash -v\n",
+                "#!/bin/bash -xe\n",
                 "yum update -y aws-cfn-bootstrap\n",
                 "# Install the files and packages from the metadata\n",
                 "\n",
-                "# Helper function\n",
-                "function error_exit\n",
-                "{\n",
-                "  /opt/aws/bin/cfn-signal -e 1 -r \"$1\" '",
-                {
-                  "Ref": "WaitHandle"
-                },
-                "'\n",
-                "  exit 1\n",
-                "}\n",
-                "\n",
-                "# Install local config\n",
                 "/opt/aws/bin/cfn-init -v ",
                 "         --stack ",
                 {
@@ -1043,17 +1005,6 @@
                 },
                 "         --resource P4D ",
                 "         --configsets All ",
-                "         --access-key ",
-                {
-                  "Ref": "HostKeys"
-                },
-                "         --secret-key ",
-                {
-                  "Fn::GetAtt": [
-                    "HostKeys",
-                    "SecretAccessKey"
-                  ]
-                },
                 "         --region ",
                 {
                   "Ref": "AWS::Region"
@@ -1071,8 +1022,6 @@
                   "Ref": "AWS::Region"
                 },
                 "\n",
-                " > /var/tmp/cfn-init.output || error_exit 'Failed to run cfn-init'\n",
-                "# All is well so signal success\n",
                 "/opt/aws/bin/cfn-signal -e 0 -r \"P4D Instance setup complete\" '",
                 {
                   "Ref": "WaitHandle"
@@ -1090,19 +1039,21 @@
         "AWS::CloudFormation::Init": {
           "configSets": {
             "All": [
-              "SaltMinion"
+              "Install"
             ]
           },
-          "SaltMinion": {
-            "files": {
-              "/tmp/init.sh": {
-                "source": "https://s3-us-west-1.amazonaws.com/perforce-doug-test/salt-for-aws-cf/setup/init.sh",
-                "mode": "0755"
+          "Install": {
+            "packages": {
+              "yum" : {
+                "git" : []
               }
             },
             "commands": {
-              "setupMinion": {
-                "command": "/tmp/init.sh 10.0.0.101 p4d-host"
+              "01_pull_source": {
+                "command": "git clone https://github.com/dougscheirer/aws-demo.git /tmp/aws-demo"
+              },
+              "02_bootstrap": {
+                "command": "bash /tmp/aws-demo/setup/init.sh 10.0.0.101 app-host"
               }
             }
           }
@@ -1184,22 +1135,10 @@
             "Fn::Join": [
               "",
               [
-                "#!/bin/bash -v\n",
+                "#!/bin/bash -xe\n",
                 "yum update -y aws-cfn-bootstrap\n",
                 "# Install the files and packages from the metadata\n",
                 "\n",
-                "# Helper function\n",
-                "function error_exit\n",
-                "{\n",
-                "  /opt/aws/bin/cfn-signal -e 1 -r \"$1\" '",
-                {
-                  "Ref": "WaitHandle"
-                },
-                "'\n",
-                "  exit 1\n",
-                "}\n",
-                "\n",
-                "# Install local config\n",
                 "/opt/aws/bin/cfn-init -v ",
                 "         --stack ",
                 {
@@ -1207,17 +1146,6 @@
                 },
                 "         --resource AppInstance ",
                 "         --configsets All ",
-                "         --access-key ",
-                {
-                  "Ref": "HostKeys"
-                },
-                "         --secret-key ",
-                {
-                  "Fn::GetAtt": [
-                    "HostKeys",
-                    "SecretAccessKey"
-                  ]
-                },
                 "         --region ",
                 {
                   "Ref": "AWS::Region"
@@ -1235,7 +1163,6 @@
                   "Ref": "AWS::Region"
                 },
                 "\n",
-                " > /var/tmp/cfn-init.output || error_exit 'Failed to run cfn-init'\n",
                 "# All is well so signal success\n",
                 "/opt/aws/bin/cfn-signal -e 0 -r \"App Instance setup complete\" '",
                 {
@@ -1254,19 +1181,21 @@
         "AWS::CloudFormation::Init": {
           "configSets": {
             "All": [
-              "SaltMinion"
+              "Install"
             ]
           },
-          "SaltMinion": {
-            "files": {
-              "/tmp/init.sh": {
-                "source": "https://s3-us-west-1.amazonaws.com/perforce-doug-test/salt-for-aws-cf/setup/init.sh",
-                "mode": "0755"
+          "Install": {
+            "packages": {
+              "yum" : {
+                "git" : []
               }
             },
             "commands": {
-              "setupMinion": {
-                "command": "/tmp/init.sh 10.0.0.101 app-host"
+              "01_pull_source": {
+                "command": "git clone https://github.com/dougscheirer/aws-demo.git /tmp/aws-demo"
+              },
+              "02_bootstrap": {
+                "command": "bash /tmp/aws-demo/setup/init.sh 10.0.0.101 app-host"
               }
             }
           }
@@ -1496,7 +1425,7 @@
           "id": "e2299c0b-ceed-4fa3-9949-131e74bd5c3b"
         }
       }
-    },
+    }
   },
   "Parameters": {
     "InstanceType": {

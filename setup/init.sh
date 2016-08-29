@@ -54,6 +54,7 @@ fi
 if [ "$ID" = "master" ]; then 
 	DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 	sh $DIR/key_wait.sh
+	echo "key_wait has been launched" | logger
 fi
 
 sed -i -e "s/#master:.*/master: $MASTER_IP/" -e "s/#id:.*/id: $ID/" /etc/salt/minion || die "failed to setup minion"

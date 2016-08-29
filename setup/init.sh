@@ -38,7 +38,6 @@ if [ ! -e /etc/init.d/salt-minion ]; then
 
 	OPTS=""
 	if [ "$ID" = "master" ]; then 
-		yum install -y python-pygit2 python-yaml || die "Failed to install python support on master."
 		OPTS="-M -J {\"interface\":\"$MASTER_IP\",\"gitfs_remotes\":[\"https://github.com/robinsonj/perforce-formula\"],\"fileserver_backend\":[\"git\",\"roots\"]}"
 	fi
 
@@ -46,6 +45,10 @@ if [ ! -e /etc/init.d/salt-minion ]; then
 	# the salt bootstrap code is prone to breaking, so either probably
 	# find a version that works and only use that one
 	bash bootstrap_salt.sh $OPTS
+
+	if [ "$ID" = "master" ]; then 
+	  yum install -y GitPython python-yaml || die "Failed to install python support on master."
+	fi
 fi
 
 if [ "$ID" = "master" ]; then 

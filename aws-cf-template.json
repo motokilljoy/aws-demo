@@ -912,7 +912,7 @@
                 "command": "git clone https://github.com/dougscheirer/aws-demo.git /tmp/aws-demo"
               },
               "02_bootstrap": {
-                "command": "bash /tmp/aws-demo/setup/init.sh 10.0.0.101 app-host"
+                "command": "bash /tmp/aws-demo/setup/init.sh 10.0.0.101 master"
               }
             }
           }
@@ -1053,7 +1053,7 @@
                 "command": "git clone https://github.com/dougscheirer/aws-demo.git /tmp/aws-demo"
               },
               "02_bootstrap": {
-                "command": "bash /tmp/aws-demo/setup/init.sh 10.0.0.101 app-host"
+                "command": "bash /tmp/aws-demo/setup/init.sh 10.0.0.101 p4d-host"
               }
             }
           }

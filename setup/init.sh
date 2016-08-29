@@ -53,7 +53,7 @@ fi
 
 if [ "$ID" = "master" ]; then 
 	DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-	setsid $DIR/key_wait.sh
+	setsid sh $DIR/key_wait.sh
 	echo "key_wait has been launched" | logger
 fi
 

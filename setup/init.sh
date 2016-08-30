@@ -30,6 +30,9 @@ restart_salt()
 
 MASTER_IP="$1"
 ID="$2"
+COMPLETE_URL="$3"
+
+# echo "URL is $COMPLETE_URL" | logger
 
 # setup the salt minion (and master)
 if [ ! -e /etc/init.d/salt-minion ]; then
@@ -38,6 +41,7 @@ if [ ! -e /etc/init.d/salt-minion ]; then
 
 	OPTS=""
 	if [ "$ID" = "master" ]; then 
+	  	yum install -y python-yaml || die "Failed to install python support on master."
 		OPTS="-M -J {\"interface\":\"$MASTER_IP\",\"gitfs_remotes\":[\"https://github.com/robinsonj/perforce-formula\"],\"fileserver_backend\":[\"git\",\"roots\"]}"
 	fi
 
@@ -47,13 +51,14 @@ if [ ! -e /etc/init.d/salt-minion ]; then
 	bash bootstrap_salt.sh $OPTS
 
 	if [ "$ID" = "master" ]; then 
-	  yum install -y GitPython python-yaml || die "Failed to install python support on master."
+	  yum install -y GitPython || die "Failed to install python support on master."
+	  restart_salt master
 	fi
 fi
 
 if [ "$ID" = "master" ]; then 
 	DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-	setsid sh $DIR/key_wait.sh
+	setsid sh $DIR/key_wait.sh "$COMPLETE_URL"
 	echo "key_wait has been launched" | logger
 fi
 

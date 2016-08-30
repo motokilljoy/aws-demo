@@ -1,24 +1,32 @@
 #!/bin/bash
 
-if [ "$1" = "fork" ]; then
-	# get the master to accept all of the keys
+COMPLETE_URL="$1"
+FORK="$2"
+
+# get the master to accept all of the keys
+if [ "$FORK" == "fork" ]; then
 	while true ; do
 		salt-key -A -y > /dev/null
 		COUNT=$(salt-key -l accepted | wc -l)
 		if [ "$COUNT" = "4" ] ; then
-			logger "all keys have been accepted"
+			echo "all keys have been accepted"
 			sleep 5
-			salt '*' test.ping | logger
+			salt '*' test.ping
 			DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-			sh $DIR/salt-deploy.sh | logger
+			sh $DIR/salt-deploy.sh
+			RETVAL=$?
 			# in AWS you would send a notification to a WaitConditionHandle
 			# to let it know if we were successful
-			exit $?
+			if [ "$COMPLETE_URL" != "" ]; then
+				cfn-signal -r 'salt deploy complete' -e $RETVAL "$COMPLETE_URL"
+			fi
+			exit $RETVAL
 		fi
-		logger "waiting for salt minions to register"
+		echo "waiting for salt minions to register"
 		salt-key -L | logger
 		sleep 5
 	done
 else
-	sh $0 "fork" &
+	# fork the shell script
+	sh $0 $COMPLETE_URL "fork" | logger &
 fi

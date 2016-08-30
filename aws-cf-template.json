@@ -879,13 +879,7 @@
                 {
                   "Ref": "AWS::Region"
                 },
-                "\n",
-                "# All is well so signal success\n",
-                "/opt/aws/bin/cfn-signal -e 0 -r \"Main Instance Stack setup complete\" '",
-                {
-                  "Ref": "WaitHandle"
-                },
-                "'\n"
+                "\n"
               ]
             ]
           }
@@ -912,7 +906,7 @@
                 "command": "git clone https://github.com/dougscheirer/aws-demo.git /tmp/aws-demo"
               },
               "02_bootstrap": {
-                "command": "bash /tmp/aws-demo/setup/init.sh 10.0.0.101 master"
+                "command": { "Fn::Join" : ["", ["bash /tmp/aws-demo/setup/init.sh 10.0.0.101 master '", { "Ref": "WaitHandle" }, "'"]] }
               }
             }
           }
@@ -1020,11 +1014,6 @@
                 "         --region ",
                 {
                   "Ref": "AWS::Region"
-                },
-                "\n",
-                "/opt/aws/bin/cfn-signal -e 0 -r \"P4D Instance setup complete\" '",
-                {
-                  "Ref": "WaitHandle"
                 },
                 "'\n"
               ]
@@ -1151,7 +1140,6 @@
                   "Ref": "AWS::Region"
                 },
                 "\n",
-                "# Signal the status from cfn-init\n",
                 "/opt/aws/bin/cfn-signal -e $? ",
                 "         --stack ",
                 {
@@ -1162,13 +1150,7 @@
                 {
                   "Ref": "AWS::Region"
                 },
-                "\n",
-                "# All is well so signal success\n",
-                "/opt/aws/bin/cfn-signal -e 0 -r \"App Instance setup complete\" '",
-                {
-                  "Ref": "WaitHandle"
-                },
-                "'\n"
+                "\n"
               ]
             ]
           }

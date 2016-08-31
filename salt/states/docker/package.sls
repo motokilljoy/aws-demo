@@ -8,8 +8,10 @@ docker_pkg:
     - name:       {{ docker.package.name }}
     - version:    {{ docker.package.version }}
     - refresh:    {{ docker.package.refresh }}
+{% if grains['os'] != 'Amazon' %}
     - require:
       - pkgrepo:  docker_package_server
+{% endif %}
 
 # Install the python docker modules.
 python-pip:

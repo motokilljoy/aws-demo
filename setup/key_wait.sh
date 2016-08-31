@@ -13,7 +13,8 @@ if [ "$FORK" == "fork" ]; then
 			sleep 5
 			salt '*' test.ping
 			DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-			sh $DIR/salt-deploy.sh
+			SALT="$( cd "$( dirname "${BASH_SOURCE[0]}" )"/.. && pwd )"
+			sh $DIR/salt-deploy.sh $SALT
 			RETVAL=$?
 			# in AWS you would send a notification to a WaitConditionHandle
 			# to let it know if we were successful

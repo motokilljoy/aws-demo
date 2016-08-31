@@ -1,11 +1,17 @@
 {% from 'docker/map.jinja' import docker with context %}
 
+{% if grains['os'] != 'Amazon' %}
 include:
   - docker.pkgrepo
+{% endif %}
 
 docker_pkg:
   pkg.installed:
+{% if grains['os'] == 'Amazon' %}
+    - name:       docker
+{% else %}
     - name:       {{ docker.package.name }}
+{% endif %}
     - version:    {{ docker.package.version }}
     - refresh:    {{ docker.package.refresh }}
 {% if grains['os'] != 'Amazon' %}

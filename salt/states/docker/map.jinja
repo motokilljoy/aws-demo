@@ -1,5 +1,7 @@
 {% import_yaml 'docker/defaults.yml' as default_settings %}
 
+{% if grains['os'] != 'Amazon' %}
+
 {% set os_config = salt['grains.filter_by'](
   {
     'Debian': {
@@ -27,5 +29,6 @@
 %}
 
 {% do default_settings.docker.update(os_config) %}
+{% endif %}
 
 {% set docker = default_settings.docker %}

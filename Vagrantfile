@@ -27,8 +27,8 @@ Vagrant.configure(2) do |config|
     salt.vm.hostname = 'salt-master'
     salt.vm.provision "shell", inline: "systemctl disable firewalld && systemctl stop firewalld"
     salt.vm.provision "shell", inline: "sh /vagrant/setup/init.sh 192.168.44.101 master"
-    salt.vm.synced_folder "salt/states", "/srv/salt"
-    salt.vm.synced_folder "salt/pillar", "/srv/pillar"
+    # salt.vm.synced_folder "salt/states", "/srv/salt"
+    # salt.vm.synced_folder "salt/pillar", "/srv/pillar"
   end
 
   # test minion 

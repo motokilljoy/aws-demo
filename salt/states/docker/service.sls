@@ -5,7 +5,11 @@ docker_service:
     - name:     {{ docker.service.name }}
     - enable:   {{ docker.service.enable }}
     - require:
+{% if grains['os'] == 'Amazon' %}
+      - pkg:    docker
+{% else %}
       - pkg:    {{ docker.package.name }}
+{% endif %}
 
 docker-service-reload:
   module.wait:

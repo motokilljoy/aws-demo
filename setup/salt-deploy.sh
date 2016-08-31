@@ -1,13 +1,14 @@
 #!/bin/bash
 
 # salt-deploy.sh
+SALT_ROOT="$1"
 
 if [ ! -e /srv/salt ] ; then
-	ln -s /tmp/aws-demo/salt/states /srv/salt
+	ln -s $SALT_ROOT/salt/states /srv/salt
 fi
 
 if [ ! -e /srv/pillar ] ; then
-	ln -s /tmp/aws-demo/salt/pillar /srv/pillar
+	ln -s $SALT_ROOT/salt/pillar /srv/pillar
 fi
 
 echo "syncing salt..."

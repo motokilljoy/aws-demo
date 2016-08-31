@@ -9,3 +9,6 @@ p4:
     config:
       main:
         source: salt://p4/p4dctl/files/master_p4dctl_main.jinja
+    services:
+      running:
+        - broker-main

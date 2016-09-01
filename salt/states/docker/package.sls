@@ -20,12 +20,21 @@ docker_pkg:
 {% endif %}
 
 # Install the python docker modules.
+{% if grains['os'] == 'Amazon' %}
+python26-pip:
+  pkg.installed
+{% else %}
 python-pip:
   pkg.installed
+{% endif %}
 
 docker_py:
   pip.installed:
     - name:       docker-py
     - upgrade:    True
     - require:
+{% if grains['os'] == 'Amazon' %}
+      - pkg:      python26-pip
+{% else %}
       - pkg:      python-pip
+{% endif %}

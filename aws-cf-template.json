@@ -903,10 +903,10 @@
             },
             "commands": {
               "01_pull_source": {
-                "command": "git clone https://github.com/dougscheirer/aws-demo.git /tmp/aws-demo"
+                "command": "git clone -b master https://github.com/dougscheirer/aws-demo.git /var/lib/aws-demo"
               },
               "02_bootstrap": {
-                "command": { "Fn::Join" : ["", ["bash /tmp/aws-demo/setup/init.sh 10.0.0.101 master '", { "Ref": "WaitHandle" }, "'"]] }
+                "command": { "Fn::Join" : ["", ["bash /var/lib/aws-demo/setup/init.sh 10.0.0.101 master '", { "Ref": "WaitHandle" }, "'"]] }
               }
             }
           }
@@ -1039,10 +1039,10 @@
             },
             "commands": {
               "01_pull_source": {
-                "command": "git clone https://github.com/dougscheirer/aws-demo.git /tmp/aws-demo"
+                "command": "git clone -b master https://github.com/dougscheirer/aws-demo.git /var/lib/aws-demo"
               },
               "02_bootstrap": {
-                "command": "bash /tmp/aws-demo/setup/init.sh 10.0.0.101 p4d-host"
+                "command": "bash /var/lib/aws-demo/setup/init.sh 10.0.0.101 p4d-host"
               }
             }
           }
@@ -1174,10 +1174,10 @@
             },
             "commands": {
               "01_pull_source": {
-                "command": "git clone https://github.com/dougscheirer/aws-demo.git /tmp/aws-demo"
+                "command": "git clone -b master https://github.com/dougscheirer/aws-demo.git /var/lib/aws-demo"
               },
               "02_bootstrap": {
-                "command": "bash /tmp/aws-demo/setup/init.sh 10.0.0.101 app-host"
+                "command": "bash /var/lib/aws-demo/setup/init.sh 10.0.0.101 app-host"
               }
             }
           }

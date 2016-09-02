@@ -1,4 +1,5 @@
 #!/bin/bash
+set +e
 
 COMPLETE_URL="$1"
 FORK="$2"
@@ -16,18 +17,20 @@ if [ "$FORK" == "fork" ]; then
 			SALT="$( cd "$( dirname "${BASH_SOURCE[0]}" )"/.. && pwd )"
 			sh $DIR/salt-deploy.sh $SALT
 			RETVAL=$?
+			echo "returned from salt-deploy: $RETVAL"
 			# in AWS you would send a notification to a WaitConditionHandle
 			# to let it know if we were successful
 			if [ "$COMPLETE_URL" != "" ]; then
-				cfn-signal -r 'salt deploy complete' -e $RETVAL "$COMPLETE_URL"
+				echo "sending signal to $COMPLETE_URL"
+				/opt/aws/bin/cfn-signal -r 'salt deploy complete' -e $RETVAL "$COMPLETE_URL" 2>&1
 			fi
 			exit $RETVAL
 		fi
 		echo "waiting for salt minions to register"
-		salt-key -L | logger
+		salt-key -L
 		sleep 5
 	done
 else
-	# fork the shell script
-	sh $0 $COMPLETE_URL "fork" | logger &
+	# fork the shell script, redirect output to a special log
+	sh $0 $COMPLETE_URL "fork" > /var/log/aws-deploy.log &
 fi

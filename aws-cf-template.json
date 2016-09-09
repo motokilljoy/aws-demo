@@ -35,7 +35,7 @@
           "height": 350
         },
         "position": {
-          "x": 30,
+          "x": 40,
           "y": 120
         },
         "z": 1,
@@ -43,13 +43,15 @@
           "3cddc86c-cf7a-4d8b-b18c-19caee3dd39c",
           "bbfa4c46-3b78-4794-aef1-26666bb77863",
           "55575608-3326-439f-910e-775bce52cd01",
-          "7c798387-f8e7-4bf7-9588-93d035bc1344"
+          "7c798387-f8e7-4bf7-9588-93d035bc1344",
+          "e2299c0b-ceed-4fa3-9949-131e74bd5c3b",
+          "2f821a16-d170-4216-9baa-5a08ea83a3bc"
         ]
       },
       "7c798387-f8e7-4bf7-9588-93d035bc1344": {
         "size": {
-          "width": 540,
-          "height": 200
+          "width": 410,
+          "height": 210
         },
         "position": {
           "x": 40,
@@ -61,6 +63,7 @@
           "d7fbeb02-b237-4fec-b356-3296c696abd6",
           "7dec3d16-20db-4fb1-aa62-e3929c55c423",
           "e99f9396-0b69-4f3f-ac8f-b676d2743c7c",
+          "fde97bbf-a7bf-4c5f-a77c-bd2e6c904b27",
           "74e342ff-d292-4dfd-9f78-61873c063cbe"
         ]
       },
@@ -70,8 +73,8 @@
           "height": 60
         },
         "position": {
-          "x": 140,
-          "y": 280
+          "x": 120,
+          "y": 300
         },
         "z": 3,
         "parent": "7c798387-f8e7-4bf7-9588-93d035bc1344",
@@ -92,7 +95,7 @@
           "height": 60
         },
         "position": {
-          "x": 210,
+          "x": 220,
           "y": 150
         },
         "z": 2,
@@ -105,8 +108,8 @@
           "height": 60
         },
         "position": {
-          "x": 570,
-          "y": 300
+          "x": 680,
+          "y": 280
         },
         "z": 1,
         "embeds": []
@@ -122,11 +125,11 @@
       },
       "bbfa4c46-3b78-4794-aef1-26666bb77863": {
         "size": {
-          "width": 210,
-          "height": 200
+          "width": 130,
+          "height": 210
         },
         "position": {
-          "x": 410,
+          "x": 470,
           "y": 240
         },
         "z": 2,
@@ -141,7 +144,7 @@
           "height": 60
         },
         "position": {
-          "x": 440,
+          "x": 500,
           "y": 300
         },
         "z": 3,
@@ -262,8 +265,8 @@
           "height": 60
         },
         "position": {
-          "x": 240,
-          "y": 280
+          "x": 200,
+          "y": 300
         },
         "z": 3,
         "parent": "7c798387-f8e7-4bf7-9588-93d035bc1344",
@@ -308,8 +311,8 @@
           "height": 60
         },
         "position": {
-          "x": 60,
-          "y": 280
+          "x": 50,
+          "y": 300
         },
         "z": 3,
         "parent": "7c798387-f8e7-4bf7-9588-93d035bc1344",
@@ -329,7 +332,7 @@
           "height": 60
         },
         "position": {
-          "x": 110,
+          "x": 120,
           "y": 150
         },
         "z": 2,
@@ -343,7 +346,7 @@
         },
         "position": {
           "x": 30,
-          "y": 500
+          "y": 510
         },
         "z": 1,
         "embeds": []
@@ -354,8 +357,8 @@
           "height": 60
         },
         "position": {
-          "x": 110,
-          "y": 500
+          "x": 120,
+          "y": 510
         },
         "z": 1,
         "embeds": []
@@ -366,8 +369,8 @@
           "height": 60
         },
         "position": {
-          "x": 200,
-          "y": 500
+          "x": 210,
+          "y": 510
         },
         "z": 1,
         "embeds": [],
@@ -382,7 +385,7 @@
         },
         "position": {
           "x": 280,
-          "y": 500
+          "y": 510
         },
         "z": 1,
         "embeds": [],
@@ -399,10 +402,11 @@
           "height": 60
         },
         "position": {
-          "x": 400,
-          "y": 500
+          "x": 360,
+          "y": 510
         },
-        "z": 1,
+        "z": 2,
+        "parent": "de5f09d3-bd08-47ff-a666-9df0f48fb27d",
         "embeds": [],
         "references": [
           "4479f2c4-0d1b-4a9e-82c7-ddb40c48d995"
@@ -419,8 +423,8 @@
           "height": 60
         },
         "position": {
-          "x": 480,
-          "y": 500
+          "x": 430,
+          "y": 510
         },
         "z": 1,
         "embeds": [],
@@ -438,10 +442,11 @@
           "height": 60
         },
         "position": {
-          "x": 580,
-          "y": 500
+          "x": 500,
+          "y": 510
         },
-        "z": 1,
+        "z": 2,
+        "parent": "de5f09d3-bd08-47ff-a666-9df0f48fb27d",
         "embeds": [],
         "isconnectedto": [
           "d7fbeb02-b237-4fec-b356-3296c696abd6"
@@ -471,13 +476,16 @@
           "height": 60
         },
         "position": {
-          "x": 340,
-          "y": 280
+          "x": 360,
+          "y": 300
         },
         "z": 3,
         "parent": "7c798387-f8e7-4bf7-9588-93d035bc1344",
         "embeds": [],
         "dependson": [
+          "e99f9396-0b69-4f3f-ac8f-b676d2743c7c"
+        ],
+        "isrelatedto": [
           "e99f9396-0b69-4f3f-ac8f-b676d2743c7c"
         ]
       },
@@ -489,6 +497,43 @@
           "id": "e99f9396-0b69-4f3f-ac8f-b676d2743c7c"
         },
         "z": 4
+      },
+      "fde97bbf-a7bf-4c5f-a77c-bd2e6c904b27": {
+        "size": {
+          "width": 60,
+          "height": 60
+        },
+        "position": {
+          "x": 290,
+          "y": 300
+        },
+        "z": 3,
+        "parent": "7c798387-f8e7-4bf7-9588-93d035bc1344",
+        "embeds": [],
+        "dependson": [
+          "e99f9396-0b69-4f3f-ac8f-b676d2743c7c"
+        ],
+        "isrelatedto": [
+          "e99f9396-0b69-4f3f-ac8f-b676d2743c7c"
+        ]
+      },
+      "d1ae712a-0e36-493b-a750-658d1ff61f6a": {
+        "source": {
+          "id": "e99f9396-0b69-4f3f-ac8f-b676d2743c7c"
+        },
+        "target": {
+          "id": "fde97bbf-a7bf-4c5f-a77c-bd2e6c904b27"
+        },
+        "z": 3
+      },
+      "c1f4d59b-140e-4f71-9605-47a460209d2a": {
+        "source": {
+          "id": "e99f9396-0b69-4f3f-ac8f-b676d2743c7c"
+        },
+        "target": {
+          "id": "74e342ff-d292-4dfd-9f78-61873c063cbe"
+        },
+        "z": 3
       }
     }
   },
@@ -852,10 +897,22 @@
             "Fn::Join": [
               "",
               [
-                "#!/bin/bash -xe\n",
+                "#!/bin/bash -v\n",
                 "yum update -y aws-cfn-bootstrap\n",
                 "# Install the files and packages from the metadata\n",
                 "\n",
+                "# Helper function\n",
+                "function error_exit\n",
+                "{\n",
+                "  /opt/aws/bin/cfn-signal -e 1 -r \"$1\" '",
+                {
+                  "Ref": "WaitHandle"
+                },
+                "'\n",
+                "  exit 1\n",
+                "}\n",
+                "\n",
+                "# Install local config\n",
                 "/opt/aws/bin/cfn-init -v ",
                 "         --stack ",
                 {
@@ -897,8 +954,8 @@
           },
           "Install": {
             "packages": {
-              "yum" : {
-                "git" : []
+              "yum": {
+                "git": []
               }
             },
             "commands": {
@@ -906,7 +963,18 @@
                 "command": "git clone -b master https://github.com/dougscheirer/aws-demo.git /var/lib/aws-demo"
               },
               "02_bootstrap": {
-                "command": { "Fn::Join" : ["", ["bash /var/lib/aws-demo/setup/init.sh 10.0.0.101 master '", { "Ref": "WaitHandle" }, "'"]] }
+                "command": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "bash /var/lib/aws-demo/setup/init.sh 10.0.0.101 master '",
+                      {
+                        "Ref": "WaitHandle"
+                      },
+                      "'"
+                    ]
+                  ]
+                }
               }
             }
           }
@@ -988,10 +1056,22 @@
             "Fn::Join": [
               "",
               [
-                "#!/bin/bash -xe\n",
+                "#!/bin/bash -v\n",
                 "yum update -y aws-cfn-bootstrap\n",
                 "# Install the files and packages from the metadata\n",
                 "\n",
+                "# Helper function\n",
+                "function error_exit\n",
+                "{\n",
+                "  /opt/aws/bin/cfn-signal -e 1 -r \"$1\" '",
+                {
+                  "Ref": "WaitHandle"
+                },
+                "'\n",
+                "  exit 1\n",
+                "}\n",
+                "\n",
+                "# Install local config\n",
                 "/opt/aws/bin/cfn-init -v ",
                 "         --stack ",
                 {
@@ -1015,7 +1095,7 @@
                 {
                   "Ref": "AWS::Region"
                 },
-                "'\n"
+                "\n"
               ]
             ]
           }
@@ -1033,8 +1113,8 @@
           },
           "Install": {
             "packages": {
-              "yum" : {
-                "git" : []
+              "yum": {
+                "git": []
               }
             },
             "commands": {
@@ -1124,10 +1204,22 @@
             "Fn::Join": [
               "",
               [
-                "#!/bin/bash -xe\n",
+                "#!/bin/bash -v\n",
                 "yum update -y aws-cfn-bootstrap\n",
                 "# Install the files and packages from the metadata\n",
                 "\n",
+                "# Helper function\n",
+                "function error_exit\n",
+                "{\n",
+                "  /opt/aws/bin/cfn-signal -e 1 -r \"$1\" '",
+                {
+                  "Ref": "WaitHandle"
+                },
+                "'\n",
+                "  exit 1\n",
+                "}\n",
+                "\n",
+                "# Install local config\n",
                 "/opt/aws/bin/cfn-init -v ",
                 "         --stack ",
                 {
@@ -1140,6 +1232,7 @@
                   "Ref": "AWS::Region"
                 },
                 "\n",
+                "# Signal the status from cfn-init\n",
                 "/opt/aws/bin/cfn-signal -e $? ",
                 "         --stack ",
                 {
@@ -1168,8 +1261,8 @@
           },
           "Install": {
             "packages": {
-              "yum" : {
-                "git" : []
+              "yum": {
+                "git": []
               }
             },
             "commands": {
@@ -1231,47 +1324,6 @@
       "Metadata": {
         "AWS::CloudFormation::Designer": {
           "id": "3cddc86c-cf7a-4d8b-b18c-19caee3dd39c"
-        }
-      }
-    },
-    "PerforceHelixIAMUser": {
-      "Type": "AWS::IAM::User",
-      "Properties": {
-        "Path": "/",
-        "Policies": [
-          {
-            "PolicyName": "PerforceHelixR53DNSPolicy",
-            "PolicyDocument": {
-              "Statement": [
-                {
-                  "Effect": "Allow",
-                  "Action": [
-                    "cloudformation:DescribeStackResource",
-                    "route53:ChangeResourceRecordSets"
-                  ],
-                  "Resource": "arn:aws:route53:::change/*"
-                }
-              ]
-            }
-          }
-        ]
-      },
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "c44de952-cf40-47fb-bb08-40ba2abc8a81"
-        }
-      }
-    },
-    "HostKeys": {
-      "Type": "AWS::IAM::AccessKey",
-      "Properties": {
-        "UserName": {
-          "Ref": "PerforceHelixIAMUser"
-        }
-      },
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "ebfb6947-7ff1-49dc-a2ba-ddaaabee478d"
         }
       }
     },
@@ -1407,9 +1459,399 @@
           "id": "e2299c0b-ceed-4fa3-9949-131e74bd5c3b"
         }
       }
+    },
+    "P4DArchiveVolume": {
+      "Type": "AWS::EC2::Volume",
+      "Properties": {
+        "AutoEnableIO": "False",
+        "AvailabilityZone": {
+          "Fn::GetAtt": [
+            "P4D",
+            "AvailabilityZone"
+          ]
+        },
+        "Encrypted": "False",
+        "Iops": {
+          "Ref": "ArchiveVolIopsForIo1"
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": {
+              "Fn::Join": [
+                " - ",
+                [
+                  {
+                    "Fn::FindInMap": [
+                      "Environments",
+                      {
+                        "Ref": "EnvironmentType"
+                      },
+                      "ValueTags"
+                    ]
+                  },
+                  "P4D Archive Volume",
+                  {
+                    "Ref": "AWS::StackName"
+                  }
+                ]
+              ]
+            }
+          }
+        ],
+        "Size": {
+          "Fn::FindInMap": [
+            "VolumeTypeMap",
+            {
+              "Ref": "ArchiveVolumeMap"
+            },
+            "VolumeSize"
+          ]
+        },
+        "VolumeType": {
+          "Fn::FindInMap": [
+            "VolumeTypeMap",
+            {
+              "Ref": "ArchiveVolumeMap"
+            },
+            "VolumeType"
+          ]
+        }
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "74e342ff-d292-4dfd-9f78-61873c063cbe"
+        }
+      },
+      "DependsOn": [
+        "P4D"
+      ]
+    },
+    "P4DArchiveDev": {
+      "Type": "AWS::EC2::VolumeAttachment",
+      "Properties": {
+        "InstanceId": {
+          "Ref": "P4D"
+        },
+        "VolumeId": {
+          "Ref": "P4DArchiveVolume"
+        },
+        "Device": "/dev/sdp"
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "c1f4d59b-140e-4f71-9605-47a460209d2a"
+        }
+      }
+    },
+    "P4DMetaDataVolume": {
+      "Type": "AWS::EC2::Volume",
+      "Properties": {
+        "AutoEnableIO": "False",
+        "AvailabilityZone": {
+          "Fn::GetAtt": [
+            "P4D",
+            "AvailabilityZone"
+          ]
+        },
+        "Encrypted": "False",
+        "Iops": {
+          "Ref": "MetaDataVolIopsForIo1"
+        },
+        "Size": {
+          "Fn::FindInMap": [
+            "VolumeTypeMap",
+            {
+              "Ref": "MetaDataVolumeMap"
+            },
+            "VolumeSize"
+          ]
+        },
+        "VolumeType": {
+          "Fn::FindInMap": [
+            "VolumeTypeMap",
+            {
+              "Ref": "MetaDataVolumeMap"
+            },
+            "VolumeType"
+          ]
+        },
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": {
+              "Fn::Join": [
+                " - ",
+                [
+                  {
+                    "Fn::FindInMap": [
+                      "Environments",
+                      {
+                        "Ref": "EnvironmentType"
+                      },
+                      "ValueTags"
+                    ]
+                  },
+                  "P4D MetaData Volume",
+                  {
+                    "Ref": "AWS::StackName"
+                  }
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "DependsOn": [
+        "P4D"
+      ],
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "fde97bbf-a7bf-4c5f-a77c-bd2e6c904b27"
+        }
+      }
+    },
+    "P4DMetaDataDev": {
+      "Type": "AWS::EC2::VolumeAttachment",
+      "Properties": {
+        "InstanceId": {
+          "Ref": "P4D"
+        },
+        "VolumeId": {
+          "Ref": "P4DMetaDataVolume"
+        },
+        "Device": "/dev/sdm"
+      },
+      "Metadata": {
+        "AWS::CloudFormation::Designer": {
+          "id": "d1ae712a-0e36-493b-a750-658d1ff61f6a"
+        }
+      }
     }
   },
   "Parameters": {
+    "ArchiveVolumeMap": {
+      "Description": "[Required]:: P4D EBS Archive Volume in GiB:: General Purpose SSD: gp2, Provisioned IOPS SSD: io1, Throughput Optimized HDD: st1, Cold HDD **sc1. **Not Tested, 1: https://aws.amazon.com/ebs/pricing/ 2: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html",
+      "Type": "String",
+      "Default": "gp2-100GB",
+      "AllowedValues": [
+        "gp2-20GB",
+        "gp2-50GB",
+        "gp2-80GB",
+        "gp2-100GB",
+        "gp2-200GB",
+        "gp2-300GB",
+        "gp2-400GB",
+        "gp2-500GB",
+        "gp2-600GB",
+        "gp2-700GB",
+        "gp2-800GB",
+        "gp2-900GB",
+        "gp2-1000GB",
+        "gp2-2000GB",
+        "gp2-3000GB",
+        "gp2-4000GB",
+        "gp2-5000GB",
+        "gp2-6000GB",
+        "gp2-7000GB",
+        "gp2-8000GB",
+        "gp2-9000GB",
+        "gp2-10000GB",
+        "gp2-11000GB",
+        "gp2-12000GB",
+        "gp2-13000GB",
+        "gp2-14000GB",
+        "gp2-15000GB",
+        "gp2-16000GB",
+        "io1-20GB",
+        "io1-50GB",
+        "io1-80GB",
+        "io1-100GB",
+        "io1-200GB",
+        "io1-300GB",
+        "io1-400GB",
+        "io1-500GB",
+        "io1-600GB",
+        "io1-700GB",
+        "io1-800GB",
+        "io1-900GB",
+        "io1-1000GB",
+        "io1-2000GB",
+        "io1-3000GB",
+        "io1-4000GB",
+        "io1-5000GB",
+        "io1-6000GB",
+        "io1-7000GB",
+        "io1-8000GB",
+        "io1-9000GB",
+        "io1-10000GB",
+        "io1-11000GB",
+        "io1-12000GB",
+        "io1-13000GB",
+        "io1-14000GB",
+        "io1-15000GB",
+        "io1-16000GB",
+        "st1-500GB",
+        "st1-600GB",
+        "st1-700GB",
+        "st1-800GB",
+        "st1-900GB",
+        "st1-1000GB",
+        "st1-2000GB",
+        "st1-3000GB",
+        "st1-4000GB",
+        "st1-5000GB",
+        "st1-6000GB",
+        "st1-7000GB",
+        "st1-8000GB",
+        "st1-9000GB",
+        "st1-10000GB",
+        "st1-11000GB",
+        "st1-12000GB",
+        "st1-13000GB",
+        "st1-14000GB",
+        "st1-15000GB",
+        "st1-16000GB",
+        "sc1-500GB",
+        "sc1-600GB",
+        "sc1-700GB",
+        "sc1-800GB",
+        "sc1-900GB",
+        "sc1-1000GB",
+        "sc1-2000GB",
+        "sc1-3000GB",
+        "sc1-4000GB",
+        "sc1-5000GB",
+        "sc1-6000GB",
+        "sc1-7000GB",
+        "sc1-8000GB",
+        "sc1-9000GB",
+        "sc1-10000GB",
+        "sc1-11000GB",
+        "sc1-12000GB",
+        "sc1-13000GB",
+        "sc1-14000GB",
+        "sc1-15000GB",
+        "sc1-16000GB"
+      ],
+      "ConstraintDescription": "Must be a valid EBS Size."
+    },
+    "MetaDataVolumeMap": {
+      "Description": "[Required]:: P4D EBS MetaData Volume in GiB:: General Purpose SSD: gp2, Provisioned IOPS SSD: io1, Throughput Optimized HDD: st1, Cold HDD **sc1. **Not Tested, 1: https://aws.amazon.com/ebs/pricing/ 2: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html",
+      "Type": "String",
+      "Default": "gp2-100GB",
+      "AllowedValues": [
+        "gp2-20GB",
+        "gp2-50GB",
+        "gp2-80GB",
+        "gp2-100GB",
+        "gp2-200GB",
+        "gp2-300GB",
+        "gp2-400GB",
+        "gp2-500GB",
+        "gp2-600GB",
+        "gp2-700GB",
+        "gp2-800GB",
+        "gp2-900GB",
+        "gp2-1000GB",
+        "gp2-2000GB",
+        "gp2-3000GB",
+        "gp2-4000GB",
+        "gp2-5000GB",
+        "gp2-6000GB",
+        "gp2-7000GB",
+        "gp2-8000GB",
+        "gp2-9000GB",
+        "gp2-10000GB",
+        "gp2-11000GB",
+        "gp2-12000GB",
+        "gp2-13000GB",
+        "gp2-14000GB",
+        "gp2-15000GB",
+        "gp2-16000GB",
+        "io1-20GB",
+        "io1-50GB",
+        "io1-80GB",
+        "io1-100GB",
+        "io1-200GB",
+        "io1-300GB",
+        "io1-400GB",
+        "io1-500GB",
+        "io1-600GB",
+        "io1-700GB",
+        "io1-800GB",
+        "io1-900GB",
+        "io1-1000GB",
+        "io1-2000GB",
+        "io1-3000GB",
+        "io1-4000GB",
+        "io1-5000GB",
+        "io1-6000GB",
+        "io1-7000GB",
+        "io1-8000GB",
+        "io1-9000GB",
+        "io1-10000GB",
+        "io1-11000GB",
+        "io1-12000GB",
+        "io1-13000GB",
+        "io1-14000GB",
+        "io1-15000GB",
+        "io1-16000GB",
+        "st1-500GB",
+        "st1-600GB",
+        "st1-700GB",
+        "st1-800GB",
+        "st1-900GB",
+        "st1-1000GB",
+        "st1-2000GB",
+        "st1-3000GB",
+        "st1-4000GB",
+        "st1-5000GB",
+        "st1-6000GB",
+        "st1-7000GB",
+        "st1-8000GB",
+        "st1-9000GB",
+        "st1-10000GB",
+        "st1-11000GB",
+        "st1-12000GB",
+        "st1-13000GB",
+        "st1-14000GB",
+        "st1-15000GB",
+        "st1-16000GB",
+        "sc1-500GB",
+        "sc1-600GB",
+        "sc1-700GB",
+        "sc1-800GB",
+        "sc1-900GB",
+        "sc1-1000GB",
+        "sc1-2000GB",
+        "sc1-3000GB",
+        "sc1-4000GB",
+        "sc1-5000GB",
+        "sc1-6000GB",
+        "sc1-7000GB",
+        "sc1-8000GB",
+        "sc1-9000GB",
+        "sc1-10000GB",
+        "sc1-11000GB",
+        "sc1-12000GB",
+        "sc1-13000GB",
+        "sc1-14000GB",
+        "sc1-15000GB",
+        "sc1-16000GB"
+      ],
+      "ConstraintDescription": "Must be a valid EBS Size."
+    },
+    "MetaDataVolIopsForIo1": {
+      "Description": "[io1 Required]:: IOPS for EBS Volume Type of (io1) Provisioned IOPS SSD, *Has AWS Storage Cost Impact!, 1: https://aws.amazon.com/ebs/pricing 2: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html",
+      "Type": "String",
+      "AllowedPattern": "^[0-9]*$"
+    },
+    "ArchiveVolIopsForIo1": {
+      "Description": "[io1 Required]:: IOPS for EBS Volume Type of (io1) Provisioned IOPS SSD, *Has AWS Storage Cost Impact!, 1: https://aws.amazon.com/ebs/pricing 2: http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html",
+      "Type": "String",
+      "AllowedPattern": "^[0-9]*$"
+    },
     "InstanceType": {
       "Description": "[Required]:: MainInstance EC2 instance type",
       "Type": "String",
@@ -1545,7 +1987,7 @@
       "ConstraintDescription": "must be the name of an existing EC2 KeyPair."
     },
     "SSHLocation": {
-      "Description": "The IP address range that can be usedto access the web server using SSH.",
+      "Description": "The IP address range that can be used to access the web server using SSH.",
       "Type": "String",
       "MinLength": "9",
       "MaxLength": "18",
@@ -1773,6 +2215,400 @@
       "Development": {
         "ValueTags": "Dev"
       }
+    },
+    "VolumeTypeMap": {
+      "gp2-20GB": {
+        "VolumeSize": "20",
+        "VolumeType": "gp2"
+      },
+      "gp2-50GB": {
+        "VolumeSize": "50",
+        "VolumeType": "gp2"
+      },
+      "gp2-80GB": {
+        "VolumeSize": "80",
+        "VolumeType": "gp2"
+      },
+      "gp2-100GB": {
+        "VolumeSize": "100",
+        "VolumeType": "gp2"
+      },
+      "gp2-200GB": {
+        "VolumeSize": "200",
+        "VolumeType": "gp2"
+      },
+      "gp2-300GB": {
+        "VolumeSize": "300",
+        "VolumeType": "gp2"
+      },
+      "gp2-400GB": {
+        "VolumeSize": "400",
+        "VolumeType": "gp2"
+      },
+      "gp2-500GB": {
+        "VolumeSize": "500",
+        "VolumeType": "gp2"
+      },
+      "gp2-600GB": {
+        "VolumeSize": "600",
+        "VolumeType": "gp2"
+      },
+      "gp2-700GB": {
+        "VolumeSize": "700",
+        "VolumeType": "gp2"
+      },
+      "gp2-800GB": {
+        "VolumeSize": "800",
+        "VolumeType": "gp2"
+      },
+      "gp2-900GB": {
+        "VolumeSize": "900",
+        "VolumeType": "gp2"
+      },
+      "gp2-1000GB": {
+        "VolumeSize": "1000",
+        "VolumeType": "gp2"
+      },
+      "gp2-2000GB": {
+        "VolumeSize": "2000",
+        "VolumeType": "gp2"
+      },
+      "gp2-3000GB": {
+        "VolumeSize": "3000",
+        "VolumeType": "gp2"
+      },
+      "gp2-4000GB": {
+        "VolumeSize": "4000",
+        "VolumeType": "gp2"
+      },
+      "gp2-5000GB": {
+        "VolumeSize": "5000",
+        "VolumeType": "gp2"
+      },
+      "gp2-6000GB": {
+        "VolumeSize": "6000",
+        "VolumeType": "gp2"
+      },
+      "gp2-7000GB": {
+        "VolumeSize": "7000",
+        "VolumeType": "gp2"
+      },
+      "gp2-8000GB": {
+        "VolumeSize": "8000",
+        "VolumeType": "gp2"
+      },
+      "gp2-9000GB": {
+        "VolumeSize": "9000",
+        "VolumeType": "gp2"
+      },
+      "gp2-10000GB": {
+        "VolumeSize": "10000",
+        "VolumeType": "gp2"
+      },
+      "gp2-11000GB": {
+        "VolumeSize": "11000",
+        "VolumeType": "gp2"
+      },
+      "gp2-12000GB": {
+        "VolumeSize": "12000",
+        "VolumeType": "gp2"
+      },
+      "gp2-13000GB": {
+        "VolumeSize": "13000",
+        "VolumeType": "gp2"
+      },
+      "gp2-14000GB": {
+        "VolumeSize": "14000",
+        "VolumeType": "gp2"
+      },
+      "gp2-15000GB": {
+        "VolumeSize": "15000",
+        "VolumeType": "gp2"
+      },
+      "gp2-16000GB": {
+        "VolumeSize": "16000",
+        "VolumeType": "gp2"
+      },
+      "io1-20GB": {
+        "VolumeSize": "20",
+        "VolumeType": "io1"
+      },
+      "io1-50GB": {
+        "VolumeSize": "50",
+        "VolumeType": "io1"
+      },
+      "io1-80GB": {
+        "VolumeSize": "80",
+        "VolumeType": "io1"
+      },
+      "io1-100GB": {
+        "VolumeSize": "100",
+        "VolumeType": "io1"
+      },
+      "io1-200GB": {
+        "VolumeSize": "200",
+        "VolumeType": "io1"
+      },
+      "io1-300GB": {
+        "VolumeSize": "300",
+        "VolumeType": "io1"
+      },
+      "io1-400GB": {
+        "VolumeSize": "400",
+        "VolumeType": "io1"
+      },
+      "io1-500GB": {
+        "VolumeSize": "500",
+        "VolumeType": "io1"
+      },
+      "io1-600GB": {
+        "VolumeSize": "600",
+        "VolumeType": "io1"
+      },
+      "io1-700GB": {
+        "VolumeSize": "700",
+        "VolumeType": "io1"
+      },
+      "io1-800GB": {
+        "VolumeSize": "800",
+        "VolumeType": "io1"
+      },
+      "io1-900GB": {
+        "VolumeSize": "900",
+        "VolumeType": "io1"
+      },
+      "io1-1000GB": {
+        "VolumeSize": "1000",
+        "VolumeType": "io1"
+      },
+      "io1-2000GB": {
+        "VolumeSize": "2000",
+        "VolumeType": "io1"
+      },
+      "io1-3000GB": {
+        "VolumeSize": "3000",
+        "VolumeType": "io1"
+      },
+      "io1-4000GB": {
+        "VolumeSize": "4000",
+        "VolumeType": "io1"
+      },
+      "io1-5000GB": {
+        "VolumeSize": "5000",
+        "VolumeType": "io1"
+      },
+      "io1-6000GB": {
+        "VolumeSize": "6000",
+        "VolumeType": "io1"
+      },
+      "io1-7000GB": {
+        "VolumeSize": "7000",
+        "VolumeType": "io1"
+      },
+      "io1-8000GB": {
+        "VolumeSize": "8000",
+        "VolumeType": "io1"
+      },
+      "io1-9000GB": {
+        "VolumeSize": "9000",
+        "VolumeType": "io1"
+      },
+      "io1-10000GB": {
+        "VolumeSize": "10000",
+        "VolumeType": "io1"
+      },
+      "io1-11000GB": {
+        "VolumeSize": "11000",
+        "VolumeType": "io1"
+      },
+      "io1-12000GB": {
+        "VolumeSize": "12000",
+        "VolumeType": "io1"
+      },
+      "io1-13000GB": {
+        "VolumeSize": "13000",
+        "VolumeType": "io1"
+      },
+      "io1-14000GB": {
+        "VolumeSize": "14000",
+        "VolumeType": "io1"
+      },
+      "io1-15000GB": {
+        "VolumeSize": "15000",
+        "VolumeType": "io1"
+      },
+      "io1-16000GB": {
+        "VolumeSize": "16000",
+        "VolumeType": "io1"
+      },
+      "st1-500GB": {
+        "VolumeSize": "500",
+        "VolumeType": "st1"
+      },
+      "st1-600GB": {
+        "VolumeSize": "600",
+        "VolumeType": "st1"
+      },
+      "st1-700GB": {
+        "VolumeSize": "700",
+        "VolumeType": "st1"
+      },
+      "st1-800GB": {
+        "VolumeSize": "800",
+        "VolumeType": "st1"
+      },
+      "st1-900GB": {
+        "VolumeSize": "900",
+        "VolumeType": "st1"
+      },
+      "st1-1000GB": {
+        "VolumeSize": "1000",
+        "VolumeType": "st1"
+      },
+      "st1-2000GB": {
+        "VolumeSize": "2000",
+        "VolumeType": "st1"
+      },
+      "st1-3000GB": {
+        "VolumeSize": "3000",
+        "VolumeType": "st1"
+      },
+      "st1-4000GB": {
+        "VolumeSize": "4000",
+        "VolumeType": "st1"
+      },
+      "st1-5000GB": {
+        "VolumeSize": "5000",
+        "VolumeType": "st1"
+      },
+      "st1-6000GB": {
+        "VolumeSize": "6000",
+        "VolumeType": "st1"
+      },
+      "st1-7000GB": {
+        "VolumeSize": "7000",
+        "VolumeType": "st1"
+      },
+      "st1-8000GB": {
+        "VolumeSize": "8000",
+        "VolumeType": "st1"
+      },
+      "st1-9000GB": {
+        "VolumeSize": "9000",
+        "VolumeType": "st1"
+      },
+      "st1-10000GB": {
+        "VolumeSize": "10000",
+        "VolumeType": "st1"
+      },
+      "st1-11000GB": {
+        "VolumeSize": "11000",
+        "VolumeType": "st1"
+      },
+      "st1-12000GB": {
+        "VolumeSize": "12000",
+        "VolumeType": "st1"
+      },
+      "st1-13000GB": {
+        "VolumeSize": "13000",
+        "VolumeType": "st1"
+      },
+      "st1-14000GB": {
+        "VolumeSize": "14000",
+        "VolumeType": "st1"
+      },
+      "st1-15000GB": {
+        "VolumeSize": "15000",
+        "VolumeType": "st1"
+      },
+      "st1-16000GB": {
+        "VolumeSize": "16000",
+        "VolumeType": "st1"
+      },
+      "sc1-500GB": {
+        "VolumeSize": "500",
+        "VolumeType": "sc1"
+      },
+      "sc1-600GB": {
+        "VolumeSize": "600",
+        "VolumeType": "sc1"
+      },
+      "sc1-700GB": {
+        "VolumeSize": "700",
+        "VolumeType": "sc1"
+      },
+      "sc1-800GB": {
+        "VolumeSize": "800",
+        "VolumeType": "sc1"
+      },
+      "sc1-900GB": {
+        "VolumeSize": "900",
+        "VolumeType": "sc1"
+      },
+      "sc1-1000GB": {
+        "VolumeSize": "1000",
+        "VolumeType": "sc1"
+      },
+      "sc1-2000GB": {
+        "VolumeSize": "2000",
+        "VolumeType": "sc1"
+      },
+      "sc1-3000GB": {
+        "VolumeSize": "3000",
+        "VolumeType": "sc1"
+      },
+      "sc1-4000GB": {
+        "VolumeSize": "4000",
+        "VolumeType": "sc1"
+      },
+      "sc1-5000GB": {
+        "VolumeSize": "5000",
+        "VolumeType": "sc1"
+      },
+      "sc1-6000GB": {
+        "VolumeSize": "6000",
+        "VolumeType": "sc1"
+      },
+      "sc1-7000GB": {
+        "VolumeSize": "7000",
+        "VolumeType": "sc1"
+      },
+      "sc1-8000GB": {
+        "VolumeSize": "8000",
+        "VolumeType": "sc1"
+      },
+      "sc1-9000GB": {
+        "VolumeSize": "9000",
+        "VolumeType": "sc1"
+      },
+      "sc1-10000GB": {
+        "VolumeSize": "10000",
+        "VolumeType": "sc1"
+      },
+      "sc1-11000GB": {
+        "VolumeSize": "11000",
+        "VolumeType": "sc1"
+      },
+      "sc1-12000GB": {
+        "VolumeSize": "12000",
+        "VolumeType": "sc1"
+      },
+      "sc1-13000GB": {
+        "VolumeSize": "13000",
+        "VolumeType": "sc1"
+      },
+      "sc1-14000GB": {
+        "VolumeSize": "14000",
+        "VolumeType": "sc1"
+      },
+      "sc1-15000GB": {
+        "VolumeSize": "15000",
+        "VolumeType": "sc1"
+      },
+      "sc1-16000GB": {
+        "VolumeSize": "16000",
+        "VolumeType": "sc1"
+      }
     }
   },
   "Outputs": {
@@ -1881,9 +2717,17 @@
     "PublicDnsMainInstance": {
       "Description": "Public Domain Name for your deployment.",
       "Value": {
-        "Fn::GetAtt": [
-          "MainInstance",
-          "PublicDnsName"
+        "Fn::If": [
+          "ProdNotify",
+          {
+            "Ref": "HostRecord"
+          },
+          {
+            "Fn::GetAtt": [
+              "MainInstance",
+              "PublicDnsName"
+            ]
+          }
         ]
       }
     },
@@ -1914,71 +2758,69 @@
         ]
       }
     },
-    "ProdURL": {
+    "URL": {
       "Description": "Perforce Helix application URL.",
-      "Condition": "ProdNotify",
       "Value": {
-        "Fn::Join": [
-          "",
-          [
-            "http://",
-            {
-              "Ref": "HostRecord"
-            }
-          ]
-        ]
-      }
-    },
-    "EvalURL": {
-      "Description": "Perforce Helix application URL.",
-      "Condition": "EvalNotify",
-      "Value": {
-        "Fn::Join": [
-          "",
-          [
-            "http://",
-            {
-              "Fn::GetAtt": [
-                "MainInstance",
-                "PublicDnsName"
+        "Fn::If": [
+          "ProdNotify",
+          {
+            "Fn::Join": [
+              "",
+              [
+                "http://",
+                {
+                  "Ref": "HostRecord"
+                }
               ]
-            }
-          ]
-        ]
-      }
-    },
-    "DevURL": {
-      "Description": "Perforce Helix application URL.",
-      "Condition": "DevNotify",
-      "Value": {
-        "Fn::Join": [
-          "",
-          [
-            "http://",
-            {
-              "Fn::GetAtt": [
-                "MainInstance",
-                "PublicDnsName"
+            ]
+          },
+          {
+            "Fn::Join": [
+              "",
+              [
+                "http://",
+                {
+                  "Fn::GetAtt": [
+                    "MainInstance",
+                    "PublicDnsName"
+                  ]
+                }
               ]
-            }
-          ]
+            ]
+          }
         ]
       }
     },
     "P4PORT": {
       "Description": "Perforce P4PORT.",
       "Value": {
-        "Fn::Join": [
-          "",
-          [
-            {
-              "Fn::GetAtt": [
-                "MainInstance",
-                "PublicIp"
+        "Fn::If": [
+          "ProdNotify",
+          {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Ref": "HostRecord"
+                },
+                ":1666"
               ]
-            },
-            ":1666"
-          ]
+            ]
+          },
+          {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::GetAtt": [
+                    "MainInstance",
+                    "PublicIp"
+                  ]
+                },
+                ":1666"
+              ]
+            ]
+          }
         ]
       }
     }

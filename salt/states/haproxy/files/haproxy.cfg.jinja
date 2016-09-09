@@ -69,4 +69,4 @@ listen perforce-swarm
   bind      *:80
   bind      *:443
 
-  server    app-host      {{ salt['mine.get']('app-host', 'network.ip_addrs')['app-host'][-1] }}:80
+  server    app-host      {{ salt['mine.get']('app-host', 'network.interface_ip')['app-host'] }}:80

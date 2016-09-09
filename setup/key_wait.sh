@@ -1,11 +1,11 @@
 #!/bin/bash
 set +e
 
-COMPLETE_URL="$1"
-FORK="$2"
+ARG1="$1"
+COMPLETE_URL="$2"
 
 # get the master to accept all of the keys
-if [ "$FORK" == "fork" ]; then
+if [ "$ARG1" == "fork" ]; then
 	while true ; do
 		salt-key -A -y > /dev/null
 		COUNT=$(salt-key -l accepted | wc -l)
@@ -32,5 +32,5 @@ if [ "$FORK" == "fork" ]; then
 	done
 else
 	# fork the shell script, redirect output to a special log
-	sh $0 $COMPLETE_URL "fork" > /var/log/aws-deploy.log &
+	sh $0 "fork" "$ARG1" > /var/log/salt-deploy.log &
 fi

@@ -14,6 +14,12 @@ fi
 echo "syncing salt..."
 salt '*' saltutil.sync_all
 
+echo "refreshing pillar data"
+salt '*' saltutil.refresh_pillar
+
+echo "updating mines"
+salt '*' mine.update
+
 echo "apply salt states..."
 salt '*' state.apply
 

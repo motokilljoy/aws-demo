@@ -1,12 +1,14 @@
 #!/bin/bash
+
+# key_wait.sh (passsword for super user) [AWS url for 'done' notification]
 set +e
 
 ARG1="$1" # fork or the things to send to fork
 
 # get the master to accept all of the keys
 if [ "$ARG1" == "fork" ]; then
-	COMPLETE_URL="$2"
-	PASSWORD="$3"
+	PASSWORD="$2"
+	COMPLETE_URL="$3"
 	while true ; do
 		salt-key -A -y > /dev/null
 		COUNT=$(salt-key -l accepted | wc -l)

@@ -26,7 +26,7 @@ Vagrant.configure(2) do |config|
     salt.vm.network :private_network, ip: "192.168.44.101"
     salt.vm.hostname = 'salt-master'
     salt.vm.provision "shell", inline: "systemctl disable firewalld && systemctl stop firewalld"
-    salt.vm.provision "shell", inline: "sh /vagrant/setup/init.sh 192.168.44.101 master"
+    salt.vm.provision "shell", inline: "sh /vagrant/setup/init.sh --ip 192.168.44.101 --id master --password d3l1c10u5"
     # salt.vm.synced_folder "salt/states", "/srv/salt"
     # salt.vm.synced_folder "salt/pillar", "/srv/pillar"
   end
@@ -36,7 +36,7 @@ Vagrant.configure(2) do |config|
     salt.vm.network :private_network, ip: "192.168.44.201"
     salt.vm.hostname = "p4d-host"
     salt.vm.provision "shell", inline: "systemctl disable firewalld && systemctl stop firewalld"
-    salt.vm.provision "shell", inline: "sh /vagrant/setup/init.sh 192.168.44.101 p4d-host"
+    salt.vm.provision "shell", inline: "sh /vagrant/setup/init.sh --ip 192.168.44.101 --id p4d-host"
   end
 
   # test minion 
@@ -44,7 +44,7 @@ Vagrant.configure(2) do |config|
     salt.vm.network :private_network, ip: "192.168.44.51"
     salt.vm.hostname = "app-host"
     salt.vm.provision "shell", inline: "systemctl disable firewalld && systemctl stop firewalld"
-    salt.vm.provision "shell", inline: "sh /vagrant/setup/init.sh 192.168.44.101 app-host"
+    salt.vm.provision "shell", inline: "sh /vagrant/setup/init.sh --ip 192.168.44.101 --id app-host"
   end
 
 end

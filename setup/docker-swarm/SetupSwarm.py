@@ -13,31 +13,22 @@ import re
 import subprocess
 from collections import OrderedDict
 
-import DockerHelper
-
-__author__ = 'sknop'
-
+__author__ = 'jrobinson'
 
 class SetupSwarm:
-    def __init__(self, port, user, password, swarmuser, swarmpass, swarm_host=None):
+    def __init__(self, port, user, password, swarmuser, swarmpass, swarm_host=None, email_host=None):
         self.swarmuser = swarmuser
         self.swarmpass = swarmpass
+        self.swarm_host = swarm_host
+        self.email_host = email_host
         self.token = str(uuid.uuid1()).upper()
-        if swarm_host:
-            self.swarm_host = swarm_host 
-        else:
-            DockerHelper.docker_real_name()
-
         self.p4 = P4.P4()
 
         self.create_token()
         self.setup_helix(port, user, password)
-        self.configure_swarm(port)
-        self.stop_and_start_swarm()
 
     def create_token(self):
         """Create the token"""
-
         path = "/opt/perforce/swarm/data/queue/tokens"
 
         # ensure the directory is there
@@ -82,65 +73,33 @@ class SetupSwarm:
             userspec._fullname = "Swarm Administrator"
             p4.save_user(userspec, "-f")
 
-        # update the password, previous password *will* be overwritten
-        p4.input = [ self.swarmpass, self.swarmpass ]
-        p4.run("passwd", self.swarmuser)
+            # update the password, previous password *will* be overwritten
+            p4.input = [ self.swarmpass, self.swarmpass ]
+            p4.run("passwd", self.swarmuser)
 
-        # create swarm group - if it does not exist, and add swarm to it
-        groups = p4.run_groups(tagged=False)
-        if self.swarmuser not in groups:
-            groupspec = p4.fetch_group(self.swarmuser)
-            groupspec._timeout = "unlimited"
-            groupspec._users = [ self.swarmuser ]
-            p4.save_group(groupspec)
+            # create swarm group - if it does not exist, and add swarm to it
+            groups = p4.run_groups(tagged=False)
+            if self.swarmuser not in groups:
+                groupspec = p4.fetch_group(self.swarmuser)
+                groupspec._timeout = "unlimited"
+                groupspec._users = [ self.swarmuser ]
+                p4.save_group(groupspec)
 
-        # add swarm as admin to the protection table, if not there already
-        if self.need_protects(p4, "admin", user=self.swarmuser):
-            protections = p4.fetch_protect()
-            protections._protections.append("admin user {} * //...".format(self.swarmuser))
-            p4.save_protect(protections)
+            # add swarm as admin to the protection table, if not there already
+            if self.need_protects(p4, "admin", user=self.swarmuser):
+                protections = p4.fetch_protect()
+                protections._protections.append("admin user {} * //...".format(self.swarmuser))
+                p4.save_protect(protections)
 
     def create_triggers(self, p4):
         """Create and submit the triggers for P4"""
-
         self.ensure_depot(p4)
 
         client_name = "tmp_swarm_setup"
-
         client_root = self.create_client(p4, client_name )
-
         self.submit_triggers(p4, client_root)
-
         self.delete_client(p4, client_name)
-
         self.create_trigger_entries(p4)
-
-    def configure_swarm(self, port):
-        config_file = "/opt/perforce/swarm/sbin/configure-swarm.sh"
-        cmd = [config_file,
-               "-p", port,
-               "-u", self.swarmuser,
-               "-w", self.swarmpass,
-               "-e", "blast.perforce.co.uk",
-               "-H", self.swarm_host]
-
-        command = " ".join(cmd)
-        p = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        (out,err) = (p.stdout, p.stderr)
-
-        result = out.read()
-        errors = err.read()
-
-        print(result) # this will be a lot of stuff, remove when verified and debugged
-        if errors:
-            print(errors, file=sys.stderr)
-
-        out.close()
-        err.close()
-
-    def stop_and_start_swarm(self):
-        stop_result = subprocess.check_output(["/usr/sbin/apachectl","stop"])
-        subprocess.call(["/usr/sbin/apachectl","-D", "FOREGROUND"])
 
     def ensure_depot(self, p4):
         """ensure .swarm depot exists"""
@@ -149,7 +108,6 @@ class SetupSwarm:
 
     def create_client(self, p4, client_name):
         """create a temporary client"""
-
         clientspec = p4.fetch_client(client_name)
         clientspec._root = '/tmp/' + client_name
         clientspec._host = ""
@@ -202,15 +160,24 @@ class SetupSwarm:
 
     def create_trigger_entries(self, p4):
         """Updates the trigger table with the correct triggers"""
+        """Run /opt/perforce/swarm-triggers/bin/swarm-trigger.pl -o and parse, we need to replace paths and index on name (first field)"""
         triggers = OrderedDict()
-        triggers['swarm.job'] = 'form-commit   job    "%//.swarm/triggers/swarm-trigger.pl% -c %//.swarm/triggers/swarm-trigger.conf% -t job        -v %formname%"'
-        triggers['swarm.user'] = 'form-commit   user   "%//.swarm/triggers/swarm-trigger.pl% -c %//.swarm/triggers/swarm-trigger.conf% -t user       -v %formname%"'
-        triggers['swarm.userdel'] = 'form-delete   user   "%//.swarm/triggers/swarm-trigger.pl% -c %//.swarm/triggers/swarm-trigger.conf% -t userdel    -v %formname%"'
-        triggers['swarm.group'] = 'form-commit   group  "%//.swarm/triggers/swarm-trigger.pl% -c %//.swarm/triggers/swarm-trigger.conf% -t group      -v %formname%"'
-        triggers['swarm.groupdel'] = 'form-delete   group  "%//.swarm/triggers/swarm-trigger.pl% -c %//.swarm/triggers/swarm-trigger.conf% -t groupdel   -v %formname%"'
-        triggers['swarm.changesave'] = 'form-save     change "%//.swarm/triggers/swarm-trigger.pl% -c %//.swarm/triggers/swarm-trigger.conf% -t changesave -v %formname%"'
-        triggers['swarm.shelve'] = 'shelve-commit //...  "%//.swarm/triggers/swarm-trigger.pl% -c %//.swarm/triggers/swarm-trigger.conf% -t shelve     -v %change%"'
-        triggers['swarm.commit'] = 'change-commit //...  "%//.swarm/triggers/swarm-trigger.pl% -c %//.swarm/triggers/swarm-trigger.conf% -t commit     -v %change%"'
+        proc=subprocess.Popen("/opt/perforce/swarm-triggers/bin/swarm-trigger.pl -o", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        while True:
+            line = proc.stdout.readline()
+            if line != '':
+                line = line.rstrip().lstrip()
+                result = re.search('([^ ]*) (.*)', line)
+                trigger = result.group(2).lstrip().replace(
+                    '%quote%/opt/perforce/swarm-triggers/bin/swarm-trigger.pl%quote%',
+                    '%quote%%//.swarm/triggers/swarm-trigger.pl%%quote% -c %quote%%//.swarm/triggers/swarm-trigger.conf%%quote%')
+                triggers[result.group(1)] = trigger
+            else:
+                break
+
+        errors = proc.stderr.read()
+        if errors:
+            print(errors, file=sys.stderr)
 
         trigger_spec = p4.fetch_triggers()
         existing_triggers = OrderedDict()
@@ -245,6 +212,7 @@ if __name__ == '__main__':
     parser.add_argument("-s", "--swarmuser", help="Swarm User", default="swarm")
     parser.add_argument("-S", "--swarmpass", help="Swarm Password", default="Swarmpass")
     parser.add_argument("-H", "--swarmhost", help="FQDN hostname for swarm URLs", default=None)
+    parser.add_argument("-e", "--email", help="email host for sending mail", default="localhost")
 
     options = parser.parse_args()
 
@@ -254,6 +222,6 @@ if __name__ == '__main__':
     swarmuser = options.swarmuser
     swarmpass = options.swarmpass
     swarm_host = options.swarmhost
+    email_host = options.email
 
-    swarm = SetupSwarm(port, user, password, swarmuser, swarmpass, swarm_host)
-
+    SetupSwarm(port, user, password, swarmuser, swarmpass, swarm_host, email_host)

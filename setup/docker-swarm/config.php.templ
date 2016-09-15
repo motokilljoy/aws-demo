@@ -1,0 +1,25 @@
+<?php
+return array(
+  'environment' => array(
+    'hostname' => 'SWARMHOST',
+    # 'baseurl' => '/swarm/SWAMPROJECTNAME'
+  ),
+  'p4' => array(
+    'port' => 'P4PORT',
+    'user' => 'SWARMUSER',
+    'password' => 'SWARMPASS'
+  ),
+  'mail' => array(
+    'sender' => 'swarm@SWARM_HOST',
+    'transport' => array(
+      'name' => 'EMAILHOST',
+      'host' => 'EMAILHOST'
+    )
+  ),
+  'session' => array(
+    # 'name' => 'SWARMPROJECTNAME'
+  ),
+  'security' => array(
+    'require_login' => true,
+  )
+);

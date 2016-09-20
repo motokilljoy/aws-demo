@@ -6,6 +6,9 @@ docker_image_{{ image_name }}:
   dockerng.running:
     - name:       {{ image.name }}
     - image:      {{ image.image }}
+  {% for key, value in image.get('options', {}).items() %}
+    - {{ key }}:  {{ value }}
+  {% endfor %}
     - require:
       - pip:      docker-py
       - service:  {{ docker.service.name }}

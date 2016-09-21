@@ -1,5 +1,10 @@
 docker:
   lookup:
+    network:
+      perforce-swarm:
+        containers:
+          - perforce-swarm
+          - perforce-swarm-cron
     container:
       swarm:
         name:   'perforce-swarm'
@@ -9,3 +14,5 @@ docker:
       swarm-cron:
         name:   'perforce-swarm-cron'
         image:  'dscheirer/swarm-cron:latest'
+        options:
+          entrypoint: '/bin/bash /docker-entrypoint.sh -u http://example/swarm'

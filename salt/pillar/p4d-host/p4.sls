@@ -1,4 +1,6 @@
 p4:
+  cl1ent:
+    base_install: True
   server:
     base_install: True
   p4dctl:

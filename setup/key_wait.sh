@@ -1,11 +1,14 @@
 #!/bin/bash
+
+# key_wait.sh (passsword for super user) [AWS url for 'done' notification]
 set +e
 
-ARG1="$1"
-COMPLETE_URL="$2"
+ARG1="$1" # fork or the things to send to fork
 
 # get the master to accept all of the keys
 if [ "$ARG1" == "fork" ]; then
+	PASSWORD="$2"
+	COMPLETE_URL="$3"
 	while true ; do
 		salt-key -A -y > /dev/null
 		COUNT=$(salt-key -l accepted | wc -l)
@@ -15,7 +18,7 @@ if [ "$ARG1" == "fork" ]; then
 			salt '*' test.ping
 			DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 			SALT="$( cd "$( dirname "${BASH_SOURCE[0]}" )"/.. && pwd )"
-			sh $DIR/salt-deploy.sh $SALT
+			sh $DIR/salt-deploy.sh $SALT $PASSWORD
 			RETVAL=$?
 			echo "returned from salt-deploy: $RETVAL"
 			# in AWS you would send a notification to a WaitConditionHandle
@@ -32,5 +35,5 @@ if [ "$ARG1" == "fork" ]; then
 	done
 else
 	# fork the shell script, redirect output to a special log
-	sh $0 "fork" "$ARG1" > /var/log/salt-deploy.log &
+	sh $0 "fork" $@ > /var/log/salt-deploy.log &
 fi

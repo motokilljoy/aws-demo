@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# init.sh MASTER_IP [ID]
+# init.sh --ip (master ip addr) --id (master/p4d-host/etc.) --wait (URL to aws wait handle) --password (password for p4d super user)
 
 die()
 {
@@ -28,9 +28,34 @@ restart_salt()
 	return 1
 }
 
-MASTER_IP="$1"
-ID="$2"
-COMPLETE_URL="$3"
+# basic argument parsing
+# --ip (addr) --id (master/p4d-host/etc.) --wait (URL to aws wait handle) --password (password for p4d super user)
+while [[ $# -gt 1 ]]; do
+	key="$1"
+
+	case $key in
+    	--ip)
+		    MASTER_IP="$2"
+		    shift # past argument
+		    ;;
+	    --id)
+		    ID="$2"
+		    shift # past argument
+		    ;;
+	    --wait)
+		    COMPLETE_URL="$2"
+		    shift # past argument
+		    ;;
+	    --password)
+		    PASSWORD="$2"
+		    shift # past argument
+		    ;;
+    	*)
+            die "unknown option $key"
+    ;;
+esac
+	shift # past argument or value
+done
 
 # echo "URL is $COMPLETE_URL" | logger
 
@@ -58,7 +83,7 @@ fi
 
 if [ "$ID" = "master" ]; then 
 	DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-	setsid sh $DIR/key_wait.sh "$COMPLETE_URL"
+	setsid sh $DIR/key_wait.sh "$PASSWORD" "$COMPLETE_URL"
 	echo "key_wait has been launched" | logger
 fi
 

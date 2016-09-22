@@ -967,9 +967,13 @@
                   "Fn::Join": [
                     "",
                     [
-                      "bash /var/lib/aws-demo/setup/init.sh 10.0.0.101 master '",
+                      "bash /var/lib/aws-demo/setup/init.sh --ip 10.0.0.101 --id master --wait '",
                       {
                         "Ref": "WaitHandle"
+                      },
+                      "' --password '", 
+                      {
+                        "Ref": "P4DSuperPass"
                       },
                       "'"
                     ]
@@ -1122,7 +1126,7 @@
                 "command": "git clone -b master https://github.com/dougscheirer/aws-demo.git /var/lib/aws-demo"
               },
               "02_bootstrap": {
-                "command": "bash /var/lib/aws-demo/setup/init.sh 10.0.0.101 p4d-host"
+                "command": "bash /var/lib/aws-demo/setup/init.sh --ip 10.0.0.101 --id p4d-host"
               }
             }
           }
@@ -1270,7 +1274,7 @@
                 "command": "git clone -b master https://github.com/dougscheirer/aws-demo.git /var/lib/aws-demo"
               },
               "02_bootstrap": {
-                "command": "bash /var/lib/aws-demo/setup/init.sh 10.0.0.101 app-host"
+                "command": "bash /var/lib/aws-demo/setup/init.sh --ip 10.0.0.101 --id app-host"
               }
             }
           }

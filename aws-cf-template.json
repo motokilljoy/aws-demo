@@ -1445,25 +1445,6 @@
         }
       }
     },
-    "WaitCondition": {
-      "Type": "AWS::CloudFormation::WaitCondition",
-      "DependsOn": [
-        "P4D",
-        "MainInstance",
-        "AppInstance"
-      ],
-      "Properties": {
-        "Handle": {
-          "Ref": "WaitHandle"
-        },
-        "Timeout": "900"
-      },
-      "Metadata": {
-        "AWS::CloudFormation::Designer": {
-          "id": "e2299c0b-ceed-4fa3-9949-131e74bd5c3b"
-        }
-      }
-    },
     "P4DArchiveVolume": {
       "Type": "AWS::EC2::Volume",
       "Properties": {

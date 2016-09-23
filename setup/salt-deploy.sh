@@ -32,10 +32,19 @@ salt '*' saltutil.refresh_pillar || die "refresh pillar failed"
 echo "updating mines"
 salt '*' mine.update || die "failed to update mine data"
 
-echo "apply salt states..."
+# set up the router so it can reach the services as they come up
+# this isn't great but otherwise we need direct wiring across all nodes or two "apply" states,
+# one for pre-deploy (our network only) and one for post (world)
+# alternatively the AWS template could hold off (?) on applying the final security group until
+# we get to a complete state
+echo "apply master states..."
+salt 'master' state.apply || die "failed to setup the master"
+
 # first create the default p4d (the main broker is unconfigured, so no access from the outside yet)
+echo "apply p4d states..."
 salt 'p4d-host' state.apply || die "failed to apply salt states to the p4d host"
 # now configure the super password, configure security, etc.
+echo "setup p4d..."
 salt 'p4d-host' p4d.setup $APPUSER $PASSWORD || die "failed to setup p4d host"
 
 # now grab the long timeout token for other services
@@ -47,11 +56,14 @@ else
 fi
 
 # set up the app server
+echo "apply app-host states..."
 salt 'app-host' state.apply || die "failed to apply salt states to the app host"
-# configure the services
-salt 'app-host' app.setup super $PASSWORD $APPUSER $LTO_TOKEN || die "failed to setup the app host"
 
-# set up the router so it can reach the now-configured services
-salt 'master' state.apply || die "failed to setup the master"
+# configure the services
+echo "setup swarm..."
+salt 'app-host' app.setup_swarm super $PASSWORD $APPUSER $LTO_TOKEN || die "failed to deploy swarm"
+echo "setup swarmc-ron..."
+salt 'app-host' app.setup_swarmcron || die "failed to deploy swarm-cron"
 
 # done!
+echo "done!"

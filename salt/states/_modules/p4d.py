@@ -61,3 +61,7 @@ def get_ticket(user, super_password):
 		return p4.run_login("-p","-a",user)[0]
 	except P4Exception:
 		return p4.errors
+
+def set_trigger_callback(callback_name, callback_ip):
+	# we need to make sure that triggers call back to the right place (the main redirect server?)
+	print("set /etc/hosts to add " + callback_name + " as " + callback_ip)

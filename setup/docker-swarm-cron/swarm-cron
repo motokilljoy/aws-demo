@@ -1,2 +1,0 @@
-* * * * * root bash /cron-job.sh >> /var/log/cron.log 2>&1
-# a blank line is required at the end of the file for cron to work

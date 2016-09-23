@@ -13,5 +13,6 @@ base:
     - p4python
     - p4.p4dctl
     - p4.client
+    - perlmods
 
   'app-host': []

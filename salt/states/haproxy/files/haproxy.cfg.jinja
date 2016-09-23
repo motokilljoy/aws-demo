@@ -38,7 +38,13 @@ defaults
   log         global
 
   # Configure stat aggregation and rendering.
-  # stats       enable
+  listen stats :9000 #Listen on localhost port 9000
+  mode http
+  stats enable # Enable statistics
+  stats hide-version # Hide HAPRoxy version
+  stats uri /haproxy 
+  # stats realm Haproxy\ Statistics # Show this text in authentication popup
+  # stats auth Username:Password
 
   # Optionally override the max connections defined in the 'global' section.
   maxconn     4000
@@ -55,6 +61,7 @@ defaults
   timeout   server        10m
   timeout   check         10s
 
+  # TODO: this isn't really doing the ssl part just yet, need to generate the keys
 listen p4broker-ssl
   bind      *:1667
   mode      tcp
@@ -63,7 +70,7 @@ listen p4broker-ssl
   timeout   client        60m
   timeout   server        60m
 
-  server    master        127.0.0.1:8666
+  server    master        127.0.0.1:1666
 
 listen perforce-swarm
   bind      *:80

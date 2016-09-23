@@ -29,6 +29,13 @@ Vagrant.configure(2) do |config|
     salt.vm.provision "shell", inline: "sh /vagrant/setup/init.sh --ip 192.168.44.101 --id master --password d3l1c10u5"
     # salt.vm.synced_folder "salt/states", "/srv/salt"
     # salt.vm.synced_folder "salt/pillar", "/srv/pillar"
+
+    # expose the http and p4d ports
+    salt.vm.network "forwarded_port", guest: 80, host: 8080
+    salt.vm.network "forwarded_port", guest: 443, host: 8443
+    salt.vm.network "forwarded_port", guest: 1666, host: 8666
+    salt.vm.network "forwarded_port", guest: 1667, host: 8667
+    salt.vm.network "forwarded_port", guest: 9000, host: 9000
   end
 
   # test minion 

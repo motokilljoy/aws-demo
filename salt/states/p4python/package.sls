@@ -4,10 +4,13 @@ p4python_package:
     - upgrade:    True
     - require:
 {% if grains['os'] == 'Amazon' %}
-      - pkg: python27-devel
+      - pkg: python26-devel
 {% else %}
       - pkg: python-devel
 {% endif %}
 
 python-devel:
+  pkg.installed
+
+python26-devel:
   pkg.installed

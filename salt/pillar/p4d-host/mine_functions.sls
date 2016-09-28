@@ -1,4 +1,5 @@
 mine_functions:
+  xfs: []
   network.ip_addrs: []
   network.interfaces: []
   network.interface_ip:

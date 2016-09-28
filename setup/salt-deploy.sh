@@ -62,7 +62,7 @@ salt 'app-host' state.apply || die "failed to apply salt states to the app host"
 # configure the services
 echo "setup swarm..."
 salt 'app-host' app.setup_swarm super $PASSWORD $APPUSER $LTO_TOKEN || die "failed to deploy swarm"
-echo "setup swarmc-ron..."
+echo "setup swarm-cron..."
 salt 'app-host' app.setup_swarmcron || die "failed to deploy swarm-cron"
 
 # done!

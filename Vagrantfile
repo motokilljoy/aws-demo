@@ -40,6 +40,16 @@ Vagrant.configure(2) do |config|
 
   # test minion 
   config.vm.define :p4dhost do |salt|
+    salt.vm.provider "virtualbox" do | v |
+        # make 2 disks for metadata and archive data
+        (1..2).each do |i| 
+          file = "p4disk#{i}.vdi"
+          v.customize ['createhd', '--filename', file, '--size', 50 * 1024] unless File.exist? file
+          v.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', i, '--device', 0, '--type', 'hdd', '--medium', file]
+        end
+
+      end
+
     salt.vm.network :private_network, ip: "192.168.44.201"
     salt.vm.hostname = "p4d-host"
     salt.vm.provision "shell", inline: "systemctl disable firewalld && systemctl stop firewalld"

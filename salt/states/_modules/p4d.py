@@ -17,6 +17,8 @@ def setup(appuser, password):
 		p4.connect()
 		table = p4.run("protect", "-o")[0]
 		p4.run("protect", "-i")
+		# store all depots in /depots (only metadata in /p4/metadata)
+		p4.run("configure", "set", "server.depot.root=/p4/depots");
 		# set up some security
 		p4.run("configure", "set", "run.users.authorize=1")
 		p4.run("configure", "set", "dm.user.noautocreate=1")

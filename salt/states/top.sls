@@ -15,5 +15,6 @@ base:
     - p4.p4dctl
     - p4.client
     - perlmods
+    - p4.checkpoint
 
   'app-host': []

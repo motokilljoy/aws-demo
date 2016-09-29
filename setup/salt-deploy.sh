@@ -47,7 +47,7 @@ salt 'p4d-host' state.apply || die "failed to apply salt states to the p4d host"
 echo "setup p4d..."
 salt 'p4d-host' p4d.setup $APPUSER $PASSWORD || die "failed to setup p4d host"
 
-# now grab the long timeout token for other services
+# now grab the long timeout token for other application services
 LTO_TOKEN=$(salt --out=raw 'p4d-host' p4d.get_ticket $APPUSER $PASSWORD | sed "s/[^:]*:[ ]*'\([^']*\)'.*/\1/")
 if [ ! $? -eq 0 ]; then
 	die "failed to get the LTO token"

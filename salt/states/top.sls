@@ -4,6 +4,7 @@ base:
     - users
 
   'master':
+    - ssc
     - haproxy
     - p4.broker
     - p4.p4dctl

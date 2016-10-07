@@ -22,6 +22,28 @@ def setup(appuser, password):
 		# set up some security
 		p4.run("configure", "set", "run.users.authorize=1")
 		p4.run("configure", "set", "dm.user.noautocreate=2")
+		p4.run("configure", "set", "cluster.id=yourserver")
+        p4.run("configure", "set", "dm.keys.hide=2")
+        p4.run("configure", "set", "monitor=2")
+        p4.run("configure", "set", "lbr.autocompress=1")
+        # structured logging
+        # 3 -> errors
+        # 6 -> user
+        # 7 => events
+        # 8 => integrity
+        p4.run("configure", "set", "serverlog.file.3=errors.csv")
+        p4.run("configure", "set", "serverlog.maxmb.3=256")
+        p4.run("configure", "set", "serverlog.retain.3=4")
+        p4.run("configure", "set", "serverlog.file.6=errors.csv")
+        p4.run("configure", "set", "serverlog.maxmb.6=256")
+        p4.run("configure", "set", "serverlog.retain.6=4")
+        p4.run("configure", "set", "serverlog.file.7=errors.csv")
+        p4.run("configure", "set", "serverlog.maxmb.7=256")
+        p4.run("configure", "set", "serverlog.retain.7=4")
+        p4.run("configure", "set", "serverlog.file.8=errors.csv")
+        p4.run("configure", "set", "serverlog.maxmb.8=256")
+        p4.run("configure", "set", "serverlog.retain.8=4")
+        # now secure the password
 		p4.run("configure", "set", "security=3")
 		p4.run_password("", password)
 		p4.password = password

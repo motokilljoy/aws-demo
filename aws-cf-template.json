@@ -1007,7 +1007,7 @@
             },
             "commands": {
               "01_pull_source": {
-                "command": "git clone -b sept_27_demos https://github.com/dougscheirer/aws-demo.git /var/lib/aws-demo"
+                "command": "git clone -b master https://github.com/dougscheirer/aws-demo.git /var/lib/aws-demo"
               },
               "02_bootstrap": {
                 "command": {
@@ -1170,7 +1170,7 @@
             },
             "commands": {
               "01_pull_source": {
-                "command": "git clone -b sept_27_demos https://github.com/dougscheirer/aws-demo.git /var/lib/aws-demo"
+                "command": "git clone -b master https://github.com/dougscheirer/aws-demo.git /var/lib/aws-demo"
               },
               "02_bootstrap": {
                 "command": "bash /var/lib/aws-demo/setup/init.sh --ip 10.0.0.101 --id p4d-host"
@@ -1318,7 +1318,7 @@
             },
             "commands": {
               "01_pull_source": {
-                "command": "git clone -b sept_27_demos https://github.com/dougscheirer/aws-demo.git /var/lib/aws-demo"
+                "command": "git clone -b master https://github.com/dougscheirer/aws-demo.git /var/lib/aws-demo"
               },
               "02_bootstrap": {
                 "command": "bash /var/lib/aws-demo/setup/init.sh --ip 10.0.0.101 --id app-host"
@@ -2048,10 +2048,11 @@
     },
     "P4DSuperPass": {
       "NoEcho": "true",
-      "Description": "[Required]:: The P4D Super account password, 8 to 1024 characters in length",
+      "Description": "[Required]:: The P4D Super account password, minimum 8 characters and at least 1 uppercase alphabet, 1 lowercase alphabet and 1 number",
       "Type": "String",
       "MinLength": "8",
-      "MaxLength": "1024"
+      "MaxLength": "1024",
+      "AllowedPattern" : "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$"
     },
     "SiteName": {
       "Description": "[Production]:: *The DNS short name for an existing Amazon Route53 Domain | [Evaluation]: Leave empty. | [Development]: Leave empty. | [Example]: helix-cloud",
@@ -2818,7 +2819,7 @@
             "Fn::Join": [
               "",
               [
-                "http://",
+                "https://",
                 {
                   "Ref": "HostRecord"
                 }
@@ -2829,7 +2830,7 @@
             "Fn::Join": [
               "",
               [
-                "http://",
+                "https://",
                 {
                   "Fn::GetAtt": [
                     "MainInstance",

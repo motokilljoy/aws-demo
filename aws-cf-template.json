@@ -2851,7 +2851,6 @@
             "Fn::Join": [
               "",
               [
-                "ssl:",
                 {
                   "Ref": "HostRecord"
                 },
@@ -2863,7 +2862,6 @@
             "Fn::Join": [
               "",
               [
-                "ssl:",
                 {
                   "Fn::GetAtt": [
                     "MainInstance",

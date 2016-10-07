@@ -693,16 +693,8 @@
         "VpcId": {
           "Ref": "VPC"
         },
-        "GroupDescription": "Allow access from HTTP/HTTPS and SSH and P4D over SSL traffic",
+        "GroupDescription": "Allow access from HTTPS and SSH and P4D over SSL traffic",
         "SecurityGroupIngress": [
-          {
-            "IpProtocol": "tcp",
-            "FromPort": "80",
-            "ToPort": "80",
-            "CidrIp": {
-              "Ref": "SSHLocation"
-            }
-          },
           {
             "IpProtocol": "tcp",
             "FromPort": "22",

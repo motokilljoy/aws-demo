@@ -21,7 +21,7 @@ def setup(appuser, password):
 		p4.run("configure", "set", "server.depot.root=/p4/depots");
 		# set up some security
 		p4.run("configure", "set", "run.users.authorize=1")
-		p4.run("configure", "set", "dm.user.noautocreate=1")
+		p4.run("configure", "set", "dm.user.noautocreate=2")
 		p4.run("configure", "set", "security=3")
 		p4.run_password("", password)
 		p4.password = password

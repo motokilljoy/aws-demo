@@ -12,3 +12,10 @@
     - require:
       - pip: m2crypto
 
+/etc/ssl/p4www.pem:
+  file.append:
+    - sources:
+      - file:///etc/pki/p4www.key
+      - file:///etc/ssl/p4www.crt
+    - require:
+      - x509: /etc/ssl/p4www.crt

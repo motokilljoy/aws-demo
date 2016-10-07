@@ -74,6 +74,6 @@ listen p4broker-ssl
 
 listen perforce-swarm
   bind      *:80
-  bind      *:443         ssl crt /etc/ssl/p4www.crt
+  bind      *:443         ssl crt /etc/ssl/p4www.pem
 
   server    app-host      {{ salt['mine.get']('app-host', 'network.interface_ip')['app-host'] }}:80

@@ -3,7 +3,9 @@ m2crypto_package_deps:
     - names:
       - gcc
       - openssl-devel
-  {% if grains['os'] == 'Amazon' or grains['os'] == 'CentOS' %}
+  {% if grains['os'] == 'Amazon' %}
+      - python26-devel
+  {% elif grains['os'] == 'CentOS' %}
       - python-devel
   {% else %}
       - python-dev

@@ -5,6 +5,12 @@ p4:
       perforce-broker:
         path:   /etc/perforce/p4broker.conf
         source: salt://p4/broker/files/master_broker.conf.jinja
+    certs:
+      p4ssldir:
+        path:     /etc/perforce/sslkeys
+        user:     perforce
+        group:    perforce
+        mode:     700
   p4dctl:
     config:
       main:

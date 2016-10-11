@@ -2,6 +2,9 @@ p4:
   broker:
     base_install: True
     config:
+      perforce-broker-ssl:
+        path:   /etc/perforce/p4broker-ssl.conf
+        source: salt://p4/broker/files/master_broker-ssl.conf.jinja
       perforce-broker:
         path:   /etc/perforce/p4broker.conf
         source: salt://p4/broker/files/master_broker.conf.jinja
@@ -17,4 +20,5 @@ p4:
         source: salt://p4/p4dctl/files/master_p4dctl_main.jinja
     services:
       running:
-        - broker-main
+        - broker-ssl
+        - broker

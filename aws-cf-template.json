@@ -999,7 +999,7 @@
             },
             "commands": {
               "01_pull_source": {
-                "command": "git clone -b sept_27_demos https://github.com/dougscheirer/aws-demo.git /var/lib/aws-demo"
+                "command": "git clone -b master https://github.com/dougscheirer/aws-demo.git /var/lib/aws-demo"
               },
               "02_bootstrap": {
                 "command": {
@@ -1162,7 +1162,7 @@
             },
             "commands": {
               "01_pull_source": {
-                "command": "git clone -b sept_27_demos https://github.com/dougscheirer/aws-demo.git /var/lib/aws-demo"
+                "command": "git clone -b master https://github.com/dougscheirer/aws-demo.git /var/lib/aws-demo"
               },
               "02_bootstrap": {
                 "command": "bash /var/lib/aws-demo/setup/init.sh --ip 10.0.0.101 --id p4d-host"
@@ -1310,7 +1310,7 @@
             },
             "commands": {
               "01_pull_source": {
-                "command": "git clone -b sept_27_demos https://github.com/dougscheirer/aws-demo.git /var/lib/aws-demo"
+                "command": "git clone -b master https://github.com/dougscheirer/aws-demo.git /var/lib/aws-demo"
               },
               "02_bootstrap": {
                 "command": "bash /var/lib/aws-demo/setup/init.sh --ip 10.0.0.101 --id app-host"
@@ -2844,6 +2844,7 @@
             "Fn::Join": [
               "",
               [
+                "ssl:",
                 {
                   "Ref": "HostRecord"
                 },
@@ -2855,6 +2856,7 @@
             "Fn::Join": [
               "",
               [
+                "ssl:",
                 {
                   "Fn::GetAtt": [
                     "MainInstance",

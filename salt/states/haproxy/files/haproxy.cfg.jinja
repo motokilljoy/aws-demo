@@ -66,9 +66,9 @@ listen p4broker-ssl
   bind      *:1667
   mode      tcp
 
-  timeout   connect       60m
-  timeout   client        60m
-  timeout   server        60m
+  timeout   connect       0m
+  timeout   client        0m
+  timeout   server        0m
 
   server    master        127.0.0.1:8667
 

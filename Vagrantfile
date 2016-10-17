@@ -26,7 +26,7 @@ Vagrant.configure(2) do |config|
     salt.vm.network :private_network, ip: "192.168.44.101"
     salt.vm.hostname = 'salt-master'
     # salt.vm.provision "shell", inline: "systemctl disable firewalld && systemctl stop firewalld"
-    salt.vm.provision "shell", inline: "sh /vagrant/setup/init.sh --ip 192.168.44.101 --id master --password d3l1c10u5"
+    salt.vm.provision "shell", inline: "sh /vagrant/setup/init.sh --ip 192.168.44.101 --id master --password d3l1c10u5 --swarmurl https://192.168.44.101:8443"
     # salt.vm.synced_folder "salt/states", "/srv/salt"
     # salt.vm.synced_folder "salt/pillar", "/srv/pillar"
 

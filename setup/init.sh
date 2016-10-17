@@ -50,6 +50,10 @@ while [[ $# -gt 1 ]]; do
 		    PASSWORD="$2"
 		    shift # past argument
 		    ;;
+		--swarmurl)
+			SWARMURL="$2"
+			shift # past argument
+			;;
     	*)
             die "unknown option $key"
     ;;
@@ -83,7 +87,8 @@ fi
 
 if [ "$ID" = "master" ]; then 
 	DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-	setsid sh $DIR/key_wait.sh "$PASSWORD" "$COMPLETE_URL"
+	# make sure to leave the --wait key for last as COMPLETE_URL may be blank
+	setsid sh $DIR/key_wait.sh --password "$PASSWORD" --swarmurl "$SWARMURL" --wait "$COMPLETE_URL"
 	echo "key_wait has been launched" | logger
 fi
 

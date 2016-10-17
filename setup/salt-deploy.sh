@@ -3,6 +3,7 @@
 # salt-deploy.sh
 SALT_ROOT="$1"
 PASSWORD="$2"
+SWARMURL="$3"
 
 APPUSER="applications"
 
@@ -61,7 +62,7 @@ salt 'app-host' state.apply || die "failed to apply salt states to the app host"
 
 # configure the services
 echo "setup swarm..."
-salt 'app-host' app.setup_swarm super $PASSWORD $APPUSER $LTO_TOKEN || die "failed to deploy swarm"
+salt 'app-host' app.setup_swarm super $PASSWORD $APPUSER $LTO_TOKEN $SWARMURL || die "failed to deploy swarm"
 echo "setup swarm-cron..."
 salt 'app-host' app.setup_swarmcron || die "failed to deploy swarm-cron"
 

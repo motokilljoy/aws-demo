@@ -7,8 +7,32 @@ ARG1="$1" # fork or the things to send to fork
 
 # get the master to accept all of the keys
 if [ "$ARG1" == "fork" ]; then
-	PASSWORD="$2"
-	COMPLETE_URL="$3"
+	shift
+	# basic argument parsing
+	# --wait (URL to aws wait handle) --password (password for p4d super user) --swarmurl (swarm url for outside connections)
+	while [[ $# -gt 1 ]]; do
+		key="$1"
+
+		case $key in
+	    	--password)
+			    PASSWORD="$2"
+			    shift # past argument
+			    ;;
+		    --wait)
+			    COMPLETE_URL="$2"
+			    shift # past argument
+			    ;;
+			--swarmurl)
+				SWARMURL="$2"
+				shift # past argument
+				;;
+	    	*)
+	            die "unknown option $key"
+	    ;;
+	esac
+		shift # past argument or value
+	done
+
 	while true ; do
 		salt-key -A -y > /dev/null
 		COUNT=$(salt-key -l accepted | wc -l)
@@ -18,7 +42,8 @@ if [ "$ARG1" == "fork" ]; then
 			salt '*' test.ping
 			DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 			SALT="$( cd "$( dirname "${BASH_SOURCE[0]}" )"/.. && pwd )"
-			sh $DIR/salt-deploy.sh $SALT $PASSWORD
+			echo "sh $DIR/salt-deploy.sh $SALT $PASSWORD $SWARMURL"
+			sh $DIR/salt-deploy.sh $SALT $PASSWORD $SWARMURL
 			RETVAL=$?
 			echo "returned from salt-deploy: $RETVAL"
 			# in AWS you would send a notification to a WaitConditionHandle

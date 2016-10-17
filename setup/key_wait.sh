@@ -42,7 +42,6 @@ if [ "$ARG1" == "fork" ]; then
 			salt '*' test.ping
 			DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 			SALT="$( cd "$( dirname "${BASH_SOURCE[0]}" )"/.. && pwd )"
-			echo "sh $DIR/salt-deploy.sh $SALT $PASSWORD $SWARMURL"
 			sh $DIR/salt-deploy.sh $SALT $PASSWORD $SWARMURL
 			RETVAL=$?
 			echo "returned from salt-deploy: $RETVAL"

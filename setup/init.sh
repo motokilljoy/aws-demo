@@ -87,6 +87,11 @@ fi
 
 if [ "$ID" = "master" ]; then 
 	DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+	# lame, but I get circualr refs in AWS if I pre-seed this based on the template, so detect it here
+	# this will not work for a "production" system as it needs a real FQDN
+	if [ "$SWARMURL" == "aws-detect" ]; then
+		SWARMURL="https://$(curl http://169.254.169.254/latest/meta-data/public-ipv4)"
+	fi
 	# make sure to leave the --wait key for last as COMPLETE_URL may be blank
 	setsid sh $DIR/key_wait.sh --password "$PASSWORD" --swarmurl "$SWARMURL" --wait "$COMPLETE_URL"
 	echo "key_wait has been launched" | logger

@@ -3,26 +3,30 @@ p4python_package:
     - name:       p4python
     - upgrade:    True
 {% if grains['os'] == 'Amazon' %}
-    - bin_env: /usr/bin/pip-2.6
+    - bin_env: /usr/bin/pip-2.7
     - require:
-      - pkg: python26-devel
+      - pkg: python27-devel
       - pkg: gcc-c++
+      - pkg: openssl-devel
 {% else %}
     - require:
-      - pkg: python-devel
+      - pkg: python27-devel
 {% endif %}
 
 {% if grains['os'] == 'Amazon' %}
 
-python26-devel:
+python27-devel:
   pkg.installed
 
 gcc-c++:
   pkg.installed
 
+openssl-devel:
+  pkg.installed
+
 {% else %}
 
-python-devel:
+python27-devel:
   pkg.installed
 
 {% endif %}

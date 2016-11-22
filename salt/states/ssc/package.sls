@@ -4,11 +4,11 @@ m2crypto_package_deps:
       - gcc
       - openssl-devel
   {% if grains['os'] == 'Amazon' %}
-      - python26-devel
+      - python27-devel
   {% elif grains['os'] == 'CentOS' %}
-      - python-devel
+      - python27-devel
   {% else %}
-      - python-dev
+      - python27-devel
   {% endif %}
 
 m2crypto_package:
